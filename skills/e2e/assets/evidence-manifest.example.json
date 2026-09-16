@@ -1,0 +1,73 @@
+{
+  "$comment": "No implemented public evidence schema is claimed by this shape-only example.",
+  "schema_version": "TEMPLATE",
+  "fixture": "SYNTHETIC",
+  "purpose": "Shape-only example for an assessment evidence manifest; it contains no runtime result.",
+  "run": {
+    "run_id": "RUN-SYNTHETIC-EXAMPLE",
+    "assessment_mode": "PLAN_ONLY",
+    "document_status": "DRAFT",
+    "observed_at": null,
+    "reported_at": null,
+    "subject": {
+      "name": "UNKNOWN",
+      "scope": "UNKNOWN",
+      "environment": "UNKNOWN",
+      "source_revision": "UNKNOWN",
+      "dirty_state": "UNKNOWN",
+      "artifact_identity": "UNKNOWN",
+      "model_identity": "UNKNOWN",
+      "prompt_identity": "UNKNOWN",
+      "corpus_identity": "UNKNOWN",
+      "configuration_identity": "UNKNOWN"
+    },
+    "authorization": {
+      "authorized_scope": "UNKNOWN",
+      "external_mutation_allowed": false,
+      "approvals": []
+    }
+  },
+  "evidence": [
+    {
+      "evidence_id": "EVD-SYNTHETIC-EXAMPLE-001",
+      "evidence_class": null,
+      "planned_evidence_class": "NEW_RUN",
+      "linked_checklist_items": ["CHK-EXAMPLE-001"],
+      "linked_task_ids": ["TSK-EXAMPLE-001"],
+      "linked_requirement_ids": ["REQ-EXAMPLE-001"],
+      "linked_gate_ids": ["GATE-EXAMPLE-001"],
+      "linked_finding_ids": [],
+      "observed_at": null,
+      "actor": "UNKNOWN",
+      "reviewer": "UNKNOWN",
+      "subject_identity": "UNKNOWN",
+      "procedure": {
+        "command": "UNKNOWN",
+        "cwd": "UNKNOWN",
+        "inputs": [],
+        "producer": "UNKNOWN",
+        "producer_version": "UNKNOWN"
+      },
+      "execution_status": "NOT_STARTED",
+      "producer_status": "NOT_RUN",
+      "evidence_validity": "NOT_RUN",
+      "check_status": "NOT_RUN",
+      "expected_result": "UNKNOWN",
+      "actual_result": null,
+      "exit_code": null,
+      "signal": null,
+      "diagnostics": [],
+      "files": [],
+      "limitations": ["Synthetic template; no command, timestamp, hash, approval, or runtime observation exists."]
+    }
+  ],
+  "decision": {
+    "value": "UNDETERMINED",
+    "proof_set": [],
+    "exceptions": [],
+    "acceptance": [],
+    "decided_at": null,
+    "decision_maker": "UNKNOWN",
+    "reason": "No evidence was run; this fixture only documents manifest shape."
+  }
+}

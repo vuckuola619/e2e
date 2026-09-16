@@ -1,0 +1,34 @@
+# Local credentials and environment files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+
+# Local interpreters and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+
+# Private assessment runs and unreviewed artifacts
+runs/private/
+private-runs/
+artifacts/private/
+private-artifacts/
+*.private.json
+*.private.md
+
+# Local logs and editor state
+*.log
+.DS_Store
+.idea/
+.vscode/
