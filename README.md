@@ -1,10 +1,11 @@
 # e2e
 
-`e2e` is a portable readiness skill and evidence workflow for teams that need to
-decide whether a change is ready for its intended users, operators, and release
-process. It gives a user one clear entrypoint, a small set of assessment modes,
-and a canonical place for requirements, observations, evidence, findings, and
-decisions.
+`e2e` is a portable product-lifecycle and readiness skill for teams shaping an
+idea, learning what to build, delivering a change, operating it, and deciding
+whether a release is ready for its intended users and operators. It gives a
+user one clear entrypoint, a small set of assessment modes, and a canonical
+place for product artifacts, requirements, observations, evidence, findings,
+and decisions.
 
 The initial release is usable as guidance and as a set of templates. It does
 not ship an automation engine, a working `e2e` command, a package published to a
@@ -13,20 +14,24 @@ such throughout this repository.
 
 ## Why this exists
 
-Readiness work often fragments across test runners, browser tools, security
-scanners, design reviews, incident checklists, and AI evaluation prompts. A
-green command or completed checklist can be mistaken for proof that a product
-is safe to release.
+Product and readiness work often fragments across idea notes, research plans,
+design reviews, test runners, browser tools, security scanners, incident
+checklists, and AI evaluation prompts. A green command or completed checklist
+can be mistaken for proof that a product is useful or safe to release.
 
 `e2e` provides a common contract for the work around those tools:
 
+- frame problems, users or affected actors, hypotheses, alternatives, outcomes,
+  constraints, and non-goals;
+- plan discovery without presenting proposed research as validation;
 - discover what applies to the product and its current goal;
 - turn applicable controls into traceable tasks and checks;
 - preserve the identity of the source, artifact, environment, and procedure;
 - keep raw observations available while producing useful compact views;
 - distinguish a task being complete from its check actually passing;
 - select an explicit proof set for a decision; and
-- keep technical readiness separate from human authorization to release.
+- keep technical readiness separate from product-learning decisions and human
+  authorization to release.
 
 This is a workflow and evidence boundary. It does not make an application
 secure or replace domain owners, independent review, or existing test/release
@@ -34,9 +39,11 @@ systems.
 
 ## Who it is for
 
-The repository is for engineers, QA/UAT and accessibility reviewers, security
-and privacy reviewers, service owners and SREs, AI quality/data owners, and
-maintainers building a host integration around the same evidence contract.
+The repository is for product managers and sponsors, researchers, designers and
+content or accessibility reviewers, engineers, QA/UAT reviewers, security and
+privacy reviewers, service owners and SREs, AI quality/data owners, governance
+roles, and maintainers building a host integration around the same evidence
+contract.
 
 Applicability is decided per assessment, with a reason and reassessment trigger
 for excluded domains.
@@ -46,10 +53,13 @@ for excluded domains.
 | Area | Current status | What that means |
 | --- | --- | --- |
 | Portable prompt and workflow | **AVAILABLE_GUIDANCE** | The skill explains intent inference, routing, authorization boundaries, evidence, and decisions. |
-| Reference workflow | **AVAILABLE_GUIDANCE** | The workflow describes discovery, planning, collection, review, and release decision steps. |
+| Lifecycle method | **AVAILABLE_GUIDANCE** | The lifecycle reference covers idea, discovery, product planning, design, build, review, QA, release, operate, and iterate with nonlinear entry. |
+| Reference workflow | **AVAILABLE_GUIDANCE** | The workflow describes lifecycle context, progressive planning, collection, review, and release decision steps. |
 | Checklists and report templates | **TEMPLATE** | Templates can be copied into an authorized run directory and filled by a human or host. |
+| Product-planning templates | **TEMPLATE** | Brief, discovery-plan, and product-plan assets record intent and handoffs; they do not perform research or approve a product. |
 | Synthetic evidence example | **TEMPLATE** | The example shows shape and status handling; all results are `NOT_RUN`. |
 | Public research register | **REFERENCE** | Public sources are recorded for selective design lessons, not vendored as executable code. |
+| Documentary source comparison | **REFERENCE** | A revision-pinned public-source comparison records documented capabilities and review limits; it is not a runtime benchmark. |
 | Typed core model and evaluator | **PLANNED** | A future implementation will validate references, identity, freshness, proof sets, and decisions. |
 | Router, runner, and resume state | **PLANNED** | A future implementation will plan modules and persist immutable run events. |
 | Tool and document adapters | **PLANNED** | A future implementation may import qualified producer formats without making them release authorities. |
@@ -60,7 +70,9 @@ for excluded domains.
 ## Quickstart
 
 The current release can be used anywhere a host can read a Markdown skill or
-prompt. It does not require an install step or a provider account.
+prompt. It does not require an install step or a provider account. Product
+planning can start from a user request or other context without a repository or
+artifact; record the missing identity as `UNKNOWN` with a reason.
 
 ```bash
 git clone https://github.com/vuckuola619/e2e.git
@@ -68,9 +80,10 @@ cd e2e
 sed -n '1,240p' skills/e2e/SKILL.md
 ```
 
-Start a review by giving a capable host the skill at
+Start by giving a capable host the skill at
 [`skills/e2e/SKILL.md`](skills/e2e/SKILL.md), an authorized target, a concrete
-goal, and a separate output run directory. A first request looks like this:
+goal, and a separate output run directory when the work produces one. A
+readiness request looks like this:
 
 ```text
 Use the e2e skill from skills/e2e/SKILL.md.
@@ -87,10 +100,59 @@ intent and existing authorization. Begin with `PLAN_ONLY` for applicability
 and a WBS; an authorized change may infer `IMPLEMENT_AND_VERIFY` without
 repeating permission. `READ_ONLY_AUDIT` preserves the target tree.
 
+For an idea or product-planning request, a repository is optional:
+
+```text
+Use the e2e skill from skills/e2e/SKILL.md.
+Goal: decide what to learn before considering a small workflow improvement.
+Phase: IDEA
+Phase span: IDEA, DISCOVERY
+Mode: PLAN_ONLY
+Planning depth: Brief
+Context: [paste the request, constraints, and any observed signals here]
+Target: UNKNOWN — no repository or artifact exists yet.
+Output: a product brief, proposed discovery questions, hypotheses, alternatives,
+and a next-step recommendation. Mark proposed research NOT_RUN.
+```
+
+Choose `Direct` for a clear small existing-project change, `Brief` when product
+intent or uncertainty needs a durable brief, and `Full` for multi-team or
+high-impact work that needs a product plan and applicable design and assurance
+artifacts. The planning depth does not add a mode or a release verdict.
+
 The templates under [`skills/e2e/assets/`](skills/e2e/assets/) and guidance under
 [`skills/e2e/references/`](skills/e2e/references/) show the expected shape.
 Replace placeholders with observed information or `UNKNOWN`; never turn a
 planned command, example screenshot, or empty result into a passing claim.
+
+## Lifecycle phases vs assessment modes
+
+The lifecycle axis locates work in the product journey. The mode axis describes
+the action allowed for this request. Select exactly one mode, record one current
+phase and an optional bounded span, and keep the axes separate. A phase never
+grants permission, creates evidence, or decides release readiness.
+
+| Lifecycle context | Mode example | Meaning |
+| --- | --- | --- |
+| `IDEA` | `PLAN_ONLY` | Frame an opportunity and its unknowns from supplied context. |
+| `DISCOVERY` | `PLAN_ONLY` | Plan research or record proposed questions; execution is not implied. |
+| `PRODUCT_PLANNING` | `PLAN_ONLY` | Define outcomes, scope, tradeoffs, dependencies, and measures. |
+| `DESIGN` | `PLAN_ONLY` or `READ_ONLY_AUDIT` | Define or inspect behavior, interaction, architecture, and quality boundaries. |
+| `BUILD` | `IMPLEMENT_AND_VERIFY` | Apply an already-authorized change and verify it. |
+| `REVIEW` | `READ_ONLY_AUDIT` | Inspect a design, change, or evidence bundle without mutating the target. |
+| `QA` | `IMPLEMENT_AND_VERIFY` or `READ_ONLY_AUDIT` | Run or review authorized checks and preserve their status. |
+| `RELEASE` | `RELEASE_REVIEW` | Evaluate the exact candidate and proof set; rollout remains separately authorized. |
+| `OPERATE` | `READ_ONLY_AUDIT` | Inspect operational signals, incidents, support, and recovery evidence. |
+| `ITERATE` | `PLAN_ONLY` | Route learning to any earlier phase and create a new revision. |
+
+The table gives examples, not a mandatory sequence. An existing product can
+enter at `OPERATE`; a bug can enter at `BUILD`, `REVIEW`, or `QA`; and a clear
+small fix can use the direct task/check path without a brief, research study,
+PRD, or all ten phases. Discovery outcomes such as `continue`, `reframe`,
+`pause`, and `stop` are product owner decisions. A recommendation to `validate`,
+`pivot`, or `build` remains a proposal until an owner decides; these are
+separate from `READY`, `CONDITIONALLY READY`, `NOT READY`, `UNDETERMINED`, and
+authorization.
 
 ## Assessment modes
 
@@ -224,17 +286,24 @@ e2e/
 │   ├── evidence.md
 │   ├── roadmap.md
 │   ├── baselines.md
-│   └── ecosystem.md
+│   ├── ecosystem.md
+│   ├── comparison.md
+│   └── benchmark-protocol.md
 ├── research/
-│   └── upstreams.json
+│   ├── upstreams.json
+│   └── comparison-2026-09-16.json
 └── skills/
     └── e2e/
         ├── SKILL.md
         ├── references/
         │   ├── workflow.md
+        │   ├── lifecycle.md
         │   ├── controls.md
         │   └── evidence.md
         └── assets/
+            ├── product-brief.md
+            ├── discovery-plan.md
+            ├── product-plan.md
             ├── checklist.md
             ├── task.md
             ├── findings.md
@@ -305,14 +374,24 @@ licenses do not automatically apply here or to another dependency. See
 | [`docs/roadmap.md`](docs/roadmap.md) | Actionable runtime milestones and acceptance checks. |
 | [`docs/baselines.md`](docs/baselines.md) | Normative and reference baselines selected for future assessments. |
 | [`docs/ecosystem.md`](docs/ecosystem.md) | Public upstream observations and reuse dispositions. |
+| [`docs/comparison.md`](docs/comparison.md) | Revision-pinned documentary comparison; runtime results remain `NOT_RUN`. |
+| [`docs/benchmark-protocol.md`](docs/benchmark-protocol.md) | Criteria and protocol for a future controlled comparison. |
+| [`research/comparison-2026-09-16.json`](research/comparison-2026-09-16.json) | Public comparison snapshot metadata and review scope. |
+| [`skills/e2e/references/lifecycle.md`](skills/e2e/references/lifecycle.md) | Lifecycle phases, progressive depth, handoffs, truth rules, and iteration. |
+| [`skills/e2e/assets/product-brief.md`](skills/e2e/assets/product-brief.md) | Brief template for product intent, hypotheses, outcomes, and boundaries. |
+| [`skills/e2e/assets/discovery-plan.md`](skills/e2e/assets/discovery-plan.md) | Discovery template for proposed research, evidence, findings, and dispositions. |
+| [`skills/e2e/assets/product-plan.md`](skills/e2e/assets/product-plan.md) | Product plan template for prioritized scope, requirements, delivery, release, operations, and measurement. |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | How to improve guidance, templates, and future runtime work. |
 | [`SECURITY.md`](SECURITY.md) | Safe handling and reporting of security issues. |
 
 ## Limitations
 
 The initial release does not run commands, open browsers, call providers,
-inspect live systems, validate artifacts, or grant release authorization. Its evidence is synthetic and `NOT_RUN`; it makes no certification, enterprise
-readiness, benchmark, host support, security coverage, or product-correctness claim.
+inspect live systems, validate artifacts, or grant release authorization. Its
+application and runtime evidence examples are synthetic and `NOT_RUN`; the
+public source comparison is documented separately and does not establish
+effectiveness. It makes no certification, enterprise readiness, benchmark, host
+support, security coverage, or product-correctness claim.
 
 A future engine can only make claims supported by its exact package, host,
 version, source, test fixture, and qualification evidence. A successful parser,

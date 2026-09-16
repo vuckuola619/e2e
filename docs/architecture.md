@@ -11,6 +11,8 @@ the runtime layers described here are planned.
   demand.
 - Tie every meaningful claim to a subject, procedure, time, and evidence.
 - Preserve history and make retests, supersession, and uncertainty explicit.
+- Locate product work in a lifecycle phase while keeping that context separate
+  from assessment mode, readiness, and authorization.
 - Keep task completion, check status, technical readiness, and authorization
   as separate concepts.
 - Work offline when the selected procedure permits it.
@@ -32,7 +34,7 @@ one typed model owns the traceability and decision path.
 | Layer | Responsibility | Authority limit |
 | --- | --- | --- |
 | User entrypoint | Receive goal, target, constraints, and existing authorization. | Does not grant permissions or create evidence. |
-| Intent and mode resolver | Select one of the four modes and record why. | Explicit user mode wins; it cannot widen scope. |
+| Intent, phase, and mode resolver | Locate the work in one lifecycle phase and select one of the four modes, recording why. | Explicit user mode wins; phase context cannot widen scope or grant permission. |
 | Applicability inventory | Record observed facts, skipped areas, and unknowns. | Incomplete discovery cannot prove global absence. |
 | Module router | Select compatible guidance, collectors, and importers. | Must respect mode, subject, host capability, maturity, and permission. |
 | Planner | Create typed tasks, dependencies, expected results, and evidence targets. | Unknown commands become discovery work. |
@@ -66,6 +68,25 @@ operation must recheck the subject and all identity dimensions needed by the
 affected controls. It may preserve history while invalidating stale evidence;
 it must not treat a changed subject as the same candidate.
 
+## Lifecycle context
+
+The product journey has ten contexts: `IDEA`, `DISCOVERY`,
+`PRODUCT_PLANNING`, `DESIGN`, `BUILD`, `REVIEW`, `QA`, `RELEASE`, `OPERATE`, and
+`ITERATE`. The phase locates the work; exactly one of
+`PLAN_ONLY`, `READ_ONLY_AUDIT`, `IMPLEMENT_AND_VERIFY`, or `RELEASE_REVIEW`
+describes the action boundary. A phase span may cover a bounded set of phases,
+but neither a phase nor a span adds permission or a release verdict.
+
+The path is nonlinear. An existing product can enter at `OPERATE`, a bug can
+enter at `BUILD`, `REVIEW`, or `QA`, and an iteration can route to any earlier
+phase. Planning depth is progressive: a clear small change can use the direct
+task/check flow, material intent can use a brief, and multi-team or high-impact
+work can use a full product plan. The portable details and templates are in
+[`skills/e2e/references/lifecycle.md`](../skills/e2e/references/lifecycle.md),
+[`product-brief.md`](../skills/e2e/assets/product-brief.md),
+[`discovery-plan.md`](../skills/e2e/assets/discovery-plan.md), and
+[`product-plan.md`](../skills/e2e/assets/product-plan.md).
+
 ### Proposed design illustration
 
 The following Mermaid flow is `PROPOSED` and is a design illustration only. It
@@ -95,6 +116,8 @@ reviewed independently:
 | --- | --- |
 | Assessment | Scope, goal, mode, phase, policy, and top-level subject relation. |
 | Subject | Source revision, dirty manifest, artifact, environment, and applicable identity dimensions. |
+| Product artifact | Brief, discovery, plan, design, or iteration record with hypotheses, observations, decisions, upstream/downstream links, revision, and supersession. It is planning context, not proof or authorization. |
+| Lifecycle signal or decision | An operational or learning signal and its attributed owner decision or pending `UNKNOWN`; it does not become a readiness verdict automatically. |
 | Requirement | Desired behavior or obligation with provenance and applicability. |
 | Control | A checkable statement, priority, method, required identity, and mandatory-gate relation. |
 | Task | One unit of work with owner, precondition, dependency predicate, procedure, and cleanup. |

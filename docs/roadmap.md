@@ -13,14 +13,26 @@ Status: `AVAILABLE_GUIDANCE` / `TEMPLATE`.
 Deliverables:
 
 - one self-contained skill with references and templates;
+- lifecycle guidance covering idea through iteration, with phase context kept
+  orthogonal to the four assessment modes;
+- progressive product-planning templates for a brief, discovery plan, and
+  product plan, including a direct path for small clear changes;
 - coverage guidance for all sixteen baseline domains;
 - public architecture, evidence, feature, quickstart, and roadmap documents;
-- synthetic examples that label every result as `NOT_RUN`; and
+- synthetic evidence examples that label every result as `NOT_RUN`; and
 - public research and licensing boundaries.
 
 Acceptance checks:
 
 - a new contributor can find the skill and follow a PLAN_ONLY workflow;
+- all ten lifecycle phases are named, nonlinear entry and iteration are
+  explained, and phase context is not confused with mode or permission;
+- planning depth scales from Direct to Brief to Full without making product
+  ceremony mandatory for a small clear change;
+- context-only idea planning can use `UNKNOWN` or reasoned `N/A` without
+  inventing a repository, participant, demand, owner decision, or result;
+- product artifacts preserve hypotheses, observations, proposals, decisions,
+  unknowns, and superseded revisions as separate records;
 - the four modes and four decisions have unambiguous meanings;
 - templates connect requirements, controls, tasks, checks, evidence, findings,
   gates, acceptance, and decisions;
@@ -36,18 +48,21 @@ Status: `TODO`. Dependency: M0 guidance and stable evidence vocabulary.
 
 Tasks:
 
-1. Define versioned typed entities for assessment, subject, requirement,
+1. Define versioned typed entities for assessment, lifecycle phase and bounded
+   phase span, subject, requirement,
    control, task, check definition, check run, gate, evidence, finding,
    unknown, acceptance, decision, and authorization.
 2. Validate local IDs, typed references, dependency DAGs, extension fields, and
    status transitions.
 3. Separate task completion from check outcome and retain retest history.
-4. Verify path confinement, file existence, size/hash integrity, symlink policy,
+4. Preserve product artifact references, supersession, and lifecycle handoff
+   fields without making them a release verdict or permission.
+5. Verify path confinement, file existence, size/hash integrity, symlink policy,
    private pointers, and non-circular manifests.
-5. Match evidence to control-specific source, artifact, environment, AI, UI,
+6. Match evidence to control-specific source, artifact, environment, AI, UI,
    and time identities.
-6. Implement a pure evaluator using selected proof sets and injected time.
-7. Preserve migration aliases and report unmapped legacy fields without loss.
+7. Implement a pure evaluator using selected proof sets and injected time.
+8. Preserve migration aliases and report unmapped legacy fields without loss.
 
 Acceptance checks:
 
@@ -127,6 +142,12 @@ Acceptance checks:
 
 Status: `TODO`. Dependency: M1–M3 and an exact host contract.
 
+The revision-pinned public source comparison is a `REFERENCE` artifact for
+documented capability coverage. It is separate from a controlled runtime
+benchmark. No equal-task trial, effectiveness result, time saving, quality
+result, or false-readiness measurement is claimed; those remain `NOT_RUN` until
+the protocol has been executed with matched conditions.
+
 Tasks:
 
 1. Create small synthetic good/bad fixtures for API, browser, RAG, agent,
@@ -148,6 +169,9 @@ Tasks:
 Acceptance checks:
 
 - independent labels include valid positive and negative cases;
+- the source comparison and any runtime benchmark are clearly separated, with
+  runtime effectiveness and false-readiness claims remaining `NOT_RUN` until
+  matched trials exist;
 - no false `READY` occurs on the required negative matrix;
 - metrics distinguish false-ready decisions, false-positive findings, and
   unsupported or abstained cases;

@@ -1,0 +1,585 @@
+{
+  "schema_version": "1.0",
+  "snapshot_started_on": "2026-09-16",
+  "completed_at": "2026-09-16T04:08:53.306602+00:00",
+  "method": "GitHub REST metadata, default-branch commit, commit-pinned README, and latest published release endpoint; no upstream execution.",
+  "runtime_benchmark_status": "NOT_RUN",
+  "status_vocabulary": [
+    "EXPLICIT",
+    "PARTIAL",
+    "NOT_EVIDENCED_IN_REVIEWED_SCOPE",
+    "OUT_OF_SCOPE"
+  ],
+  "interpretation_rules": {
+    "not_evidenced": "The capability was not documented in the reviewed first-party README or linked primary documentation; this is not a global absence claim.",
+    "stars": "Stars are a dated popularity signal only and are not a quality, safety, effectiveness, or maturity score.",
+    "none_returned": "NONE_RETURNED records the latest-release endpoint response, including HTTP 404 where captured; it does not establish inactivity.",
+    "head_vs_release": "Default-branch HEAD documentation and published release bytes are separate identities and must not be silently combined.",
+    "e2e_baseline": "The e2e record is the pre-lifecycle snapshot at 08e6e66; lifecycle changes made after that snapshot are not attributed to it."
+  },
+  "repositories": [
+    {
+      "requested_repository": "obra/superpowers",
+      "canonical_repository": "obra/superpowers",
+      "canonical_url": "https://github.com/obra/superpowers",
+      "metadata_endpoint": "https://api.github.com/repos/obra/superpowers",
+      "metadata_observed_at": "2026-09-16T04:06:45.817070+00:00",
+      "stars": 287238,
+      "forks": 25681,
+      "archived": false,
+      "default_branch": "main",
+      "pushed_at": "2026-09-14T18:42:08Z",
+      "license_spdx_declared": "MIT",
+      "runtime_benchmark_status": "NOT_RUN",
+      "head": {
+        "sha": "b36e0829c6d0140e93cfef2ca599b1b07d4a7797",
+        "url": "https://github.com/obra/superpowers/commit/b36e0829c6d0140e93cfef2ca599b1b07d4a7797",
+        "committed_at": "2026-08-12T16:53:21Z",
+        "observed_at": "2026-09-16T04:06:47.148714+00:00"
+      },
+      "readme": {
+        "path": "README.md",
+        "url": "https://github.com/obra/superpowers/blob/b36e0829c6d0140e93cfef2ca599b1b07d4a7797/README.md",
+        "blob_sha": "09a91c6d03cfa3d874c5c33b6f8cc3d0b2d89645",
+        "sha256": "4cd0e751210f24a5e4788730e7b5bb145b4d03a2b2c71202721454481a5c5e81",
+        "observed_at": "2026-09-16T04:06:47.830755+00:00",
+        "status": "FETCHED"
+      },
+      "latest_release": {
+        "status": "PUBLISHED",
+        "tag": "v6.3.0",
+        "published_at": "2026-08-12T16:58:30Z",
+        "url": "https://github.com/obra/superpowers/releases/tag/v6.3.0",
+        "observed_at": "2026-09-16T04:06:48.383082+00:00"
+      },
+      "product_type": "delivery_orchestrator",
+      "capabilities": {
+        "discovery": {"status": "PARTIAL", "observation": "Brainstorming and design approval are documented; structured market or user research was not evidenced in the reviewed workflow.", "sources": ["https://github.com/obra/superpowers/blob/b36e0829c6d0140e93cfef2ca599b1b07d4a7797/README.md"]},
+        "planning": {"status": "EXPLICIT", "observation": "File-specific implementation planning is documented.", "sources": ["https://github.com/obra/superpowers/blob/b36e0829c6d0140e93cfef2ca599b1b07d4a7797/skills/writing-plans/SKILL.md"]},
+        "build": {"status": "EXPLICIT", "observation": "TDD implementation and isolated development are documented.", "sources": ["https://github.com/obra/superpowers/blob/b36e0829c6d0140e93cfef2ca599b1b07d4a7797/README.md"]},
+        "review": {"status": "EXPLICIT", "observation": "Two-stage and fresh-context review practices are documented.", "sources": ["https://github.com/obra/superpowers/blob/b36e0829c6d0140e93cfef2ca599b1b07d4a7797/skills/subagent-driven-development/SKILL.md"]},
+        "verification": {"status": "EXPLICIT", "observation": "Verification before completion is a named workflow concern.", "sources": ["https://github.com/obra/superpowers/blob/b36e0829c6d0140e93cfef2ca599b1b07d4a7797/skills/verification-before-completion/SKILL.md"]},
+        "operations": {"status": "NOT_EVIDENCED_IN_REVIEWED_SCOPE", "observation": "Production operations and post-release measurement were not documented in the reviewed primary workflow.", "sources": ["https://github.com/obra/superpowers/blob/b36e0829c6d0140e93cfef2ca599b1b07d4a7797/README.md"]}
+      },
+      "install_runtime": {"status": "EXPLICIT", "observation": "Skill installation and a published release are documented; no runtime outcome was tested.", "sources": ["https://github.com/obra/superpowers/blob/b36e0829c6d0140e93cfef2ca599b1b07d4a7797/README.md"]},
+      "limitations": ["Documentation was inspected at the pinned commit; no repository was installed or executed.", "Published claims and popularity were not independently validated as outcomes."]
+    },
+    {
+      "requested_repository": "github/spec-kit",
+      "canonical_repository": "github/spec-kit",
+      "canonical_url": "https://github.com/github/spec-kit",
+      "metadata_endpoint": "https://api.github.com/repos/github/spec-kit",
+      "metadata_observed_at": "2026-09-16T04:06:45.875596+00:00",
+      "stars": 137097,
+      "forks": 12278,
+      "archived": false,
+      "default_branch": "main",
+      "pushed_at": "2026-09-15T22:48:36Z",
+      "license_spdx_declared": "MIT",
+      "runtime_benchmark_status": "NOT_RUN",
+      "head": {
+        "sha": "1d5106f59e1b148ee23ab136638932dd790ff1b6",
+        "url": "https://github.com/github/spec-kit/commit/1d5106f59e1b148ee23ab136638932dd790ff1b6",
+        "committed_at": "2026-09-15T22:04:13Z",
+        "observed_at": "2026-09-16T04:06:46.354525+00:00"
+      },
+      "readme": {
+        "path": "README.md",
+        "url": "https://github.com/github/spec-kit/blob/1d5106f59e1b148ee23ab136638932dd790ff1b6/README.md",
+        "blob_sha": "2cd0045f4c6065c8d67631b0f68989c9b93ef3ae",
+        "sha256": "e00aa27eab1c43e6e43b957adc79d458c92604247a5e6116c1f58a4f736aa6c4",
+        "observed_at": "2026-09-16T04:06:46.851756+00:00",
+        "status": "FETCHED"
+      },
+      "latest_release": {
+        "status": "PUBLISHED",
+        "tag": "v1.0.7",
+        "published_at": "2026-09-15T13:45:03Z",
+        "url": "https://github.com/github/spec-kit/releases/tag/v1.0.7",
+        "observed_at": "2026-09-16T04:06:47.327501+00:00"
+      },
+      "product_type": "delivery_orchestrator",
+      "capabilities": {
+        "discovery": {"status": "EXPLICIT", "observation": "Idea assessment documents intake, research, shaping, and positive, clarification, or stop outcomes.", "sources": ["https://github.com/github/spec-kit/blob/1d5106f59e1b148ee23ab136638932dd790ff1b6/README.md"]},
+        "planning": {"status": "EXPLICIT", "observation": "Specification, clarification, planning, checklist, and task artifacts are documented.", "sources": ["https://github.com/github/spec-kit/blob/1d5106f59e1b148ee23ab136638932dd790ff1b6/README.md"]},
+        "build": {"status": "EXPLICIT", "observation": "Implementation and convergence are documented in the spec-driven flow.", "sources": ["https://github.com/github/spec-kit/blob/1d5106f59e1b148ee23ab136638932dd790ff1b6/README.md"]},
+        "review": {"status": "EXPLICIT", "observation": "Clarification, checklist, consistency analysis, and human workflow gates are documented.", "sources": ["https://github.github.io/spec-kit/reference/workflows.html"]},
+        "verification": {"status": "EXPLICIT", "observation": "Bug-flow testing and artifact-to-code convergence are documented; this review did not run them.", "sources": ["https://github.github.io/spec-kit/reference/agentic-sdd.html"]},
+        "operations": {"status": "NOT_EVIDENCED_IN_REVIEWED_SCOPE", "observation": "A dedicated first-party release and steady-state operations phase was not documented in the inspected core pages.", "sources": ["https://github.github.io/spec-kit/reference/workflows.html"]}
+      },
+      "install_runtime": {"status": "EXPLICIT", "observation": "A CLI/package workflow and published release are documented; no installation or runtime outcome was tested.", "sources": ["https://github.com/github/spec-kit/blob/1d5106f59e1b148ee23ab136638932dd790ff1b6/README.md"]},
+      "limitations": ["Community extensions and pages outside the reviewed primary sources were not comprehensively reviewed.", "Documented workflow coverage is not a quality or effectiveness benchmark."]
+    },
+    {
+      "requested_repository": "Fission-AI/OpenSpec",
+      "canonical_repository": "Fission-AI/OpenSpec",
+      "canonical_url": "https://github.com/Fission-AI/OpenSpec",
+      "metadata_endpoint": "https://api.github.com/repos/Fission-AI/OpenSpec",
+      "metadata_observed_at": "2026-09-16T04:06:45.897542+00:00",
+      "stars": 68411,
+      "forks": 4703,
+      "archived": false,
+      "default_branch": "main",
+      "pushed_at": "2026-09-15T16:34:45Z",
+      "license_spdx_declared": "MIT",
+      "runtime_benchmark_status": "NOT_RUN",
+      "head": {
+        "sha": "9d4e5974e5c0d9a09b9c6c1e1eb0975e80ec4461",
+        "url": "https://github.com/Fission-AI/OpenSpec/commit/9d4e5974e5c0d9a09b9c6c1e1eb0975e80ec4461",
+        "committed_at": "2026-09-09T20:59:22Z",
+        "observed_at": "2026-09-16T04:06:46.391233+00:00"
+      },
+      "readme": {
+        "path": "README.md",
+        "url": "https://github.com/Fission-AI/OpenSpec/blob/9d4e5974e5c0d9a09b9c6c1e1eb0975e80ec4461/README.md",
+        "blob_sha": "ddf36a476eb80cbe3a403031ee7746f22aa6aa4b",
+        "sha256": "e21547114b61e472950eecb70feea89f440f1d0c5282b0179f4b17474faad545",
+        "observed_at": "2026-09-16T04:06:46.843131+00:00",
+        "status": "FETCHED"
+      },
+      "latest_release": {
+        "status": "PUBLISHED",
+        "tag": "v1.13.0",
+        "published_at": "2026-09-09T21:10:23Z",
+        "url": "https://github.com/Fission-AI/OpenSpec/releases/tag/v1.13.0",
+        "observed_at": "2026-09-16T04:06:47.549047+00:00"
+      },
+      "product_type": "delivery_orchestrator",
+      "capabilities": {
+        "discovery": {"status": "PARTIAL", "observation": "An optional explore path shapes changes, while structured product research was not evidenced in the reviewed core pages.", "sources": ["https://github.com/Fission-AI/OpenSpec/blob/9d4e5974e5c0d9a09b9c6c1e1eb0975e80ec4461/README.md"]},
+        "planning": {"status": "EXPLICIT", "observation": "Proposal, requirements/scenarios, design, and task artifacts are documented.", "sources": ["https://github.com/Fission-AI/OpenSpec/blob/9d4e5974e5c0d9a09b9c6c1e1eb0975e80ec4461/README.md"]},
+        "build": {"status": "EXPLICIT", "observation": "Apply and change-local implementation workflow are documented.", "sources": ["https://github.com/Fission-AI/OpenSpec/blob/9d4e5974e5c0d9a09b9c6c1e1eb0975e80ec4461/README.md"]},
+        "review": {"status": "EXPLICIT", "observation": "Reviewing changes and artifact consistency are documented as workflow activities.", "sources": ["https://github.com/Fission-AI/OpenSpec/blob/9d4e5974e5c0d9a09b9c6c1e1eb0975e80ec4461/docs/reviewing-changes.md"]},
+        "verification": {"status": "EXPLICIT", "observation": "An optional verify path and structural validation are documented; no verification was run here.", "sources": ["https://github.com/Fission-AI/OpenSpec/blob/9d4e5974e5c0d9a09b9c6c1e1eb0975e80ec4461/docs/commands.md"]},
+        "operations": {"status": "NOT_EVIDENCED_IN_REVIEWED_SCOPE", "observation": "Production operations and post-launch outcome measurement were not documented in the reviewed core pages.", "sources": ["https://github.com/Fission-AI/OpenSpec/blob/9d4e5974e5c0d9a09b9c6c1e1eb0975e80ec4461/README.md"]}
+      },
+      "install_runtime": {"status": "EXPLICIT", "observation": "CLI installation and published release material are documented; no package was installed or executed.", "sources": ["https://github.com/Fission-AI/OpenSpec/blob/9d4e5974e5c0d9a09b9c6c1e1eb0975e80ec4461/README.md"]},
+      "limitations": ["Cross-repository stores, custom schemas, and extensions were not comprehensively reviewed.", "Archive and verify behavior remain documented workflow signals, not e2e release proof."]
+    },
+    {
+      "requested_repository": "bmad-code-org/BMAD-METHOD",
+      "canonical_repository": "bmad-code-org/BMAD-METHOD",
+      "canonical_url": "https://github.com/bmad-code-org/BMAD-METHOD",
+      "metadata_endpoint": "https://api.github.com/repos/bmad-code-org/BMAD-METHOD",
+      "metadata_observed_at": "2026-09-16T04:06:46.066364+00:00",
+      "stars": 53067,
+      "forks": 5994,
+      "archived": false,
+      "default_branch": "main",
+      "pushed_at": "2026-09-16T03:26:14Z",
+      "license_spdx_declared": "NOASSERTION",
+      "runtime_benchmark_status": "NOT_RUN",
+      "head": {
+        "sha": "0a00053409731db811f2595ceb521dff9dde9a19",
+        "url": "https://github.com/bmad-code-org/BMAD-METHOD/commit/0a00053409731db811f2595ceb521dff9dde9a19",
+        "committed_at": "2026-09-15T21:56:46Z",
+        "observed_at": "2026-09-16T04:06:46.535215+00:00"
+      },
+      "readme": {
+        "path": "README.md",
+        "url": "https://github.com/bmad-code-org/BMAD-METHOD/blob/0a00053409731db811f2595ceb521dff9dde9a19/README.md",
+        "blob_sha": "d8f1d23e26b974d62b1f83348a8adb6d8cf96c4d",
+        "sha256": "f98c5acb4eb659caf66e2b4155de998950a886a33d9f1d50a634ce62afbe5f9a",
+        "observed_at": "2026-09-16T04:06:47.244956+00:00",
+        "status": "FETCHED"
+      },
+      "latest_release": {
+        "status": "PUBLISHED",
+        "tag": "v6.12.0",
+        "published_at": "2026-09-04T02:31:25Z",
+        "url": "https://github.com/bmad-code-org/BMAD-METHOD/releases/tag/v6.12.0",
+        "observed_at": "2026-09-16T04:06:49.249688+00:00"
+      },
+      "product_type": "delivery_orchestrator",
+      "capabilities": {
+        "discovery": {"status": "EXPLICIT", "observation": "Idea brainstorming, pressure testing, cited research, and product framing are documented.", "sources": ["https://github.com/bmad-code-org/BMAD-METHOD/blob/0a00053409731db811f2595ceb521dff9dde9a19/README.md"]},
+        "planning": {"status": "EXPLICIT", "observation": "Product briefs, PRD, UX, architecture, and story planning paths are documented.", "sources": ["https://github.com/bmad-code-org/BMAD-METHOD/blob/0a00053409731db811f2595ceb521dff9dde9a19/README.md"]},
+        "build": {"status": "EXPLICIT", "observation": "Build and implementation workflows are documented, including direct paths for clear changes.", "sources": ["https://github.com/bmad-code-org/BMAD-METHOD/blob/0a00053409731db811f2595ceb521dff9dde9a19/README.md"]},
+        "review": {"status": "EXPLICIT", "observation": "Artifact validation, coordination, and review roles are documented.", "sources": ["https://github.com/bmad-code-org/BMAD-METHOD/blob/0a00053409731db811f2595ceb521dff9dde9a19/README.md"]},
+        "verification": {"status": "EXPLICIT", "observation": "Build/verify, integration checks, and retrospective learning are documented.", "sources": ["https://github.com/bmad-code-org/BMAD-METHOD/blob/0a00053409731db811f2595ceb521dff9dde9a19/README.md"]},
+        "operations": {"status": "PARTIAL", "observation": "DevOps and learn/adjust material is documented; a single qualified production operations path was not executed or fully reviewed.", "sources": ["https://github.com/bmad-code-org/BMAD-METHOD/blob/0a00053409731db811f2595ceb521dff9dde9a19/README.md"]}
+      },
+      "install_runtime": {"status": "EXPLICIT", "observation": "Installation and release material are documented; the package and host behavior were not tested.", "sources": ["https://github.com/bmad-code-org/BMAD-METHOD/blob/0a00053409731db811f2595ceb521dff9dde9a19/README.md"]},
+      "limitations": ["The repository license metadata was NOASSERTION at observation; do not infer a single reuse license for every file.", "Testing, DevOps, and autonomous-loop modules were not comprehensively reviewed or executed."]
+    },
+    {
+      "requested_repository": "affaan-m/ecc",
+      "canonical_repository": "affaan-m/ECC",
+      "canonical_url": "https://github.com/affaan-m/ECC",
+      "metadata_endpoint": "https://api.github.com/repos/affaan-m/ECC",
+      "metadata_observed_at": "2026-09-16T04:06:47.785158+00:00",
+      "stars": 259437,
+      "forks": 38804,
+      "archived": false,
+      "default_branch": "main",
+      "pushed_at": "2026-09-15T19:33:00Z",
+      "license_spdx_declared": "MIT",
+      "runtime_benchmark_status": "NOT_RUN",
+      "head": {
+        "sha": "8321021c54d670126ce3b2969d5deb880b4b0c2a",
+        "url": "https://github.com/affaan-m/ECC/commit/8321021c54d670126ce3b2969d5deb880b4b0c2a",
+        "committed_at": "2026-09-12T11:45:40Z",
+        "observed_at": "2026-09-16T04:06:48.220503+00:00"
+      },
+      "readme": {
+        "path": "README.md",
+        "url": "https://github.com/affaan-m/ECC/blob/8321021c54d670126ce3b2969d5deb880b4b0c2a/README.md",
+        "blob_sha": "86dba51207907b2e5de07d6b0579a681522cdc13",
+        "sha256": "0af25aa87d75486d5e60d4f6389f6a0366b06da32a16ca47b17dbb48376463b2",
+        "observed_at": "2026-09-16T04:06:49.007825+00:00",
+        "status": "FETCHED"
+      },
+      "latest_release": {
+        "status": "PUBLISHED",
+        "tag": "v2.2.1",
+        "published_at": "2026-09-08T17:52:08Z",
+        "url": "https://github.com/affaan-m/ECC/releases/tag/v2.2.1",
+        "observed_at": "2026-09-16T04:06:49.482431+00:00"
+      },
+      "product_type": "delivery_orchestrator",
+      "capabilities": {
+        "discovery": {"status": "PARTIAL", "observation": "Feature planning, research, and market-research skills are documented; a required problem-discovery stage was not evidenced in the primary flow.", "sources": ["https://github.com/affaan-m/ECC/blob/8321021c54d670126ce3b2969d5deb880b4b0c2a/README.md"]},
+        "planning": {"status": "EXPLICIT", "observation": "Planning, planner/architect, and editable engineering artifacts are documented.", "sources": ["https://github.com/affaan-m/ECC/blob/8321021c54d670126ce3b2969d5deb880b4b0c2a/README.md"]},
+        "build": {"status": "EXPLICIT", "observation": "TDD implementation and refactoring workflow are documented.", "sources": ["https://github.com/affaan-m/ECC/blob/8321021c54d670126ce3b2969d5deb880b4b0c2a/README.md"]},
+        "review": {"status": "EXPLICIT", "observation": "Fresh-context code, security, and domain review skills are documented.", "sources": ["https://github.com/affaan-m/ECC/blob/8321021c54d670126ce3b2969d5deb880b4b0c2a/README.md"]},
+        "verification": {"status": "EXPLICIT", "observation": "Tests, E2E, quality gates, and verification loops are documented.", "sources": ["https://github.com/affaan-m/ECC/blob/8321021c54d670126ce3b2969d5deb880b4b0c2a/README.md"]},
+        "operations": {"status": "PARTIAL", "observation": "Deployment, operations, and PM2 skills are documented; a single mainline deploy-and-monitor stage was not evidenced.", "sources": ["https://github.com/affaan-m/ECC/blob/8321021c54d670126ce3b2969d5deb880b4b0c2a/README.md"]}
+      },
+      "install_runtime": {"status": "EXPLICIT", "observation": "Versioned npm/release packaging, host adapters, dry-run, doctor, repair, uninstall, and hook profiles are documented; no install was run.", "sources": ["https://github.com/affaan-m/ECC/blob/8321021c54d670126ce3b2969d5deb880b4b0c2a/README.md"]},
+      "limitations": ["README-described counts, production use, and battle-tested claims were not independently verified.", "Capability parity is host-dependent and was not tested."]
+    },
+    {
+      "requested_repository": "garrytan/gstack",
+      "canonical_repository": "garrytan/gstack",
+      "canonical_url": "https://github.com/garrytan/gstack",
+      "metadata_endpoint": "https://api.github.com/repos/garrytan/gstack",
+      "metadata_observed_at": "2026-09-16T04:06:48.067843+00:00",
+      "stars": 133255,
+      "forks": 19864,
+      "archived": false,
+      "default_branch": "main",
+      "pushed_at": "2026-09-15T20:53:59Z",
+      "license_spdx_declared": "MIT",
+      "runtime_benchmark_status": "NOT_RUN",
+      "head": {
+        "sha": "85b8c038fc0002a1549789ea018e924c1d335de4",
+        "url": "https://github.com/garrytan/gstack/commit/85b8c038fc0002a1549789ea018e924c1d335de4",
+        "committed_at": "2026-09-15T20:53:58Z",
+        "observed_at": "2026-09-16T04:06:49.052198+00:00"
+      },
+      "readme": {
+        "path": "README.md",
+        "url": "https://github.com/garrytan/gstack/blob/85b8c038fc0002a1549789ea018e924c1d335de4/README.md",
+        "blob_sha": "0dfc52212d1c7ddd40b4e8bb7dc594a22b87bb7e",
+        "sha256": "288ac031be00fbfaaa7958840dc397035d3f48a5631512e7dcdea3c86f41e8bc",
+        "observed_at": "2026-09-16T04:06:49.745579+00:00",
+        "status": "FETCHED"
+      },
+      "latest_release": {
+        "status": "NONE_RETURNED",
+        "tag": null,
+        "published_at": null,
+        "url": null,
+        "observed_at": "2026-09-16T04:06:50.369438+00:00",
+        "endpoint_error": "gh: Not Found (HTTP 404)",
+        "interpretation": "Latest-release endpoint returned no release; this is not an inactivity finding."
+      },
+      "product_type": "delivery_orchestrator",
+      "capabilities": {
+        "discovery": {"status": "EXPLICIT", "observation": "Office-hours, CEO, design, and DX reviews challenge the problem and scope.", "sources": ["https://github.com/garrytan/gstack/blob/85b8c038fc0002a1549789ea018e924c1d335de4/README.md"]},
+        "planning": {"status": "EXPLICIT", "observation": "Role-specific plan reviews and an autoplan path are documented.", "sources": ["https://github.com/garrytan/gstack/blob/85b8c038fc0002a1549789ea018e924c1d335de4/README.md"]},
+        "build": {"status": "PARTIAL", "observation": "Implementation between an approved plan and review is shown; a general named build executor was not evidenced in the reviewed sprint table.", "sources": ["https://github.com/garrytan/gstack/blob/85b8c038fc0002a1549789ea018e924c1d335de4/README.md"]},
+        "review": {"status": "EXPLICIT", "observation": "Code, design, DX, security, and outside-model reviews are documented.", "sources": ["https://github.com/garrytan/gstack/blob/85b8c038fc0002a1549789ea018e924c1d335de4/docs/skills.md"]},
+        "verification": {"status": "EXPLICIT", "observation": "Browser QA, regression tests, evidence freshness, and ship checks are documented.", "sources": ["https://github.com/garrytan/gstack/blob/85b8c038fc0002a1549789ea018e924c1d335de4/README.md"]},
+        "operations": {"status": "EXPLICIT", "observation": "Ship, deploy, canary, monitoring, and documentation update paths are documented.", "sources": ["https://github.com/garrytan/gstack/blob/85b8c038fc0002a1549789ea018e924c1d335de4/README.md"]}
+      },
+      "install_runtime": {"status": "EXPLICIT", "observation": "Cross-host setup, uninstall, and browser runtime are documented; quick install follows a moving branch and no GitHub release was returned. Host qualification and execution were not performed.", "sources": ["https://github.com/garrytan/gstack/blob/85b8c038fc0002a1549789ea018e924c1d335de4/README.md"]},
+      "limitations": ["No project installation, browser run, deploy, canary, or performance comparison was performed.", "A moving-branch install and a missing release endpoint are separate observations from inactivity."]
+    },
+    {
+      "requested_repository": "sickn33/antigravity-awesome-skills",
+      "canonical_repository": "sickn33/agentic-awesome-skills",
+      "canonical_url": "https://github.com/sickn33/agentic-awesome-skills",
+      "metadata_endpoint": "https://api.github.com/repos/sickn33/agentic-awesome-skills",
+      "metadata_observed_at": "2026-09-16T04:06:49.133636+00:00",
+      "stars": 46472,
+      "forks": 6776,
+      "archived": false,
+      "default_branch": "main",
+      "pushed_at": "2026-09-15T08:34:56Z",
+      "license_spdx_declared": "MIT",
+      "runtime_benchmark_status": "NOT_RUN",
+      "head": {
+        "sha": "69906dde999aaa0f3d173f0e3d5bcdb84c87a294",
+        "url": "https://github.com/sickn33/agentic-awesome-skills/commit/69906dde999aaa0f3d173f0e3d5bcdb84c87a294",
+        "committed_at": "2026-09-15T08:33:45Z",
+        "observed_at": "2026-09-16T04:06:50.052856+00:00"
+      },
+      "readme": {
+        "path": "README.md",
+        "url": "https://github.com/sickn33/agentic-awesome-skills/blob/69906dde999aaa0f3d173f0e3d5bcdb84c87a294/README.md",
+        "blob_sha": "e11add226f822083706d5a33541d02f949736396",
+        "sha256": "68974bf5be56c7211b562f9f03fc8272ade6202a441a9eb2d6481a72c213db34",
+        "observed_at": "2026-09-16T04:06:51.079216+00:00",
+        "status": "FETCHED"
+      },
+      "latest_release": {
+        "status": "PUBLISHED",
+        "tag": "v17.3.0",
+        "published_at": "2026-09-15T08:34:58Z",
+        "url": "https://github.com/sickn33/agentic-awesome-skills/releases/tag/v17.3.0",
+        "observed_at": "2026-09-16T04:06:52.007171+00:00"
+      },
+      "product_type": "skill_control_plane",
+      "capabilities": {
+        "discovery": {"status": "PARTIAL", "observation": "Agent-selected skill search and product playbooks are documented; Core selects skills rather than product requirements.", "sources": ["https://github.com/sickn33/agentic-awesome-skills/blob/69906dde999aaa0f3d173f0e3d5bcdb84c87a294/docs/users/aas-core.md"]},
+        "planning": {"status": "EXPLICIT", "observation": "Workflow playbooks and immutable stack/install planning are documented.", "sources": ["https://github.com/sickn33/agentic-awesome-skills/blob/69906dde999aaa0f3d173f0e3d5bcdb84c87a294/docs/users/workflows.md"]},
+        "build": {"status": "EXPLICIT", "observation": "Selected skills point to implementation workflows; Core is not a central product executor.", "sources": ["https://github.com/sickn33/agentic-awesome-skills/blob/69906dde999aaa0f3d173f0e3d5bcdb84c87a294/docs/users/workflows.md"]},
+        "review": {"status": "EXPLICIT", "observation": "Security, QA, and specialist review playbooks are documented, without semantic certification by Core.", "sources": ["https://github.com/sickn33/agentic-awesome-skills/blob/69906dde999aaa0f3d173f0e3d5bcdb84c87a294/README.md"]},
+        "verification": {"status": "PARTIAL", "observation": "Playbooks call for tests and evidence; Core validation concerns stack identity and structure rather than product correctness.", "sources": ["https://github.com/sickn33/agentic-awesome-skills/blob/69906dde999aaa0f3d173f0e3d5bcdb84c87a294/docs/users/aas-core.md"]},
+        "operations": {"status": "PARTIAL", "observation": "SaaS playbooks include deployment, observability, and rollback skills; no single authoritative release runtime was documented.", "sources": ["https://github.com/sickn33/agentic-awesome-skills/blob/69906dde999aaa0f3d173f0e3d5bcdb84c87a294/docs/users/workflows.md"]}
+      },
+      "install_runtime": {"status": "EXPLICIT", "observation": "Package, direct installers, plugins, and a published release are documented; no installation or host run was performed.", "sources": ["https://github.com/sickn33/agentic-awesome-skills/blob/69906dde999aaa0f3d173f0e3d5bcdb84c87a294/README.md"]},
+      "limitations": ["Core is documented as an agent-first preview; apply/recovery and semantic quality were not qualified here.", "Catalog size and structural validation are not quality or lifecycle-completeness scores."]
+    },
+    {
+      "requested_repository": "gsd-build/get-shit-done",
+      "canonical_repository": "gsd-build/get-shit-done",
+      "canonical_url": "https://github.com/gsd-build/get-shit-done",
+      "metadata_endpoint": "https://api.github.com/repos/gsd-build/get-shit-done",
+      "metadata_observed_at": "2026-09-16T04:06:49.738649+00:00",
+      "stars": 64529,
+      "forks": 5452,
+      "archived": true,
+      "default_branch": "main",
+      "pushed_at": "2026-05-31T17:46:54Z",
+      "license_spdx_declared": "MIT",
+      "runtime_benchmark_status": "NOT_RUN",
+      "head": {
+        "sha": "bdcaab2c752d9a33a1a1ca9acf3a3c81fb991815",
+        "url": "https://github.com/gsd-build/get-shit-done/commit/bdcaab2c752d9a33a1a1ca9acf3a3c81fb991815",
+        "committed_at": "2026-05-31T13:34:35Z",
+        "observed_at": "2026-09-16T04:06:50.232418+00:00"
+      },
+      "readme": {
+        "path": "README.md",
+        "url": "https://github.com/gsd-build/get-shit-done/blob/bdcaab2c752d9a33a1a1ca9acf3a3c81fb991815/README.md",
+        "blob_sha": "6232a8c42bbdcd0ad5f290c41806c2728c68d194",
+        "sha256": "6530ef6aad23383980a7c405d32c40e73c798ee4263a883f804aef31548569b6",
+        "observed_at": "2026-09-16T04:06:51.016474+00:00",
+        "status": "FETCHED"
+      },
+      "latest_release": {
+        "status": "PUBLISHED",
+        "tag": "v1.42.3",
+        "published_at": "2026-05-16T04:36:09Z",
+        "url": "https://github.com/gsd-build/get-shit-done/releases/tag/v1.42.3",
+        "observed_at": "2026-09-16T04:06:51.517580+00:00"
+      },
+      "product_type": "redirect",
+      "redirects_to": "open-gsd/gsd-core",
+      "capabilities": {
+        "discovery": {"status": "OUT_OF_SCOPE", "observation": "Archived README is a migration notice; current product behavior is evaluated in the active redirect target record.", "sources": ["https://github.com/gsd-build/get-shit-done/blob/bdcaab2c752d9a33a1a1ca9acf3a3c81fb991815/README.md"]},
+        "planning": {"status": "OUT_OF_SCOPE", "observation": "Archived README is a migration notice; no current workflow claim is assigned to this record.", "sources": ["https://github.com/gsd-build/get-shit-done/blob/bdcaab2c752d9a33a1a1ca9acf3a3c81fb991815/README.md"]},
+        "build": {"status": "OUT_OF_SCOPE", "observation": "Archived README is a migration notice; active implementation is covered by open-gsd/gsd-core.", "sources": ["https://github.com/gsd-build/get-shit-done/blob/bdcaab2c752d9a33a1a1ca9acf3a3c81fb991815/README.md"]},
+        "review": {"status": "OUT_OF_SCOPE", "observation": "Archived README is not treated as evidence for the active workflow.", "sources": ["https://github.com/gsd-build/get-shit-done/blob/bdcaab2c752d9a33a1a1ca9acf3a3c81fb991815/README.md"]},
+        "verification": {"status": "OUT_OF_SCOPE", "observation": "Archived README is not treated as evidence for current verification behavior.", "sources": ["https://github.com/gsd-build/get-shit-done/blob/bdcaab2c752d9a33a1a1ca9acf3a3c81fb991815/README.md"]},
+        "operations": {"status": "OUT_OF_SCOPE", "observation": "Archived README is not treated as evidence for active release or operations behavior.", "sources": ["https://github.com/gsd-build/get-shit-done/blob/bdcaab2c752d9a33a1a1ca9acf3a3c81fb991815/README.md"]}
+      },
+      "install_runtime": {"status": "OUT_OF_SCOPE", "observation": "The archived README is a redirect to open-gsd/gsd-core; installer/runtime behavior is assigned to the active target record.", "sources": ["https://github.com/gsd-build/get-shit-done/blob/bdcaab2c752d9a33a1a1ca9acf3a3c81fb991815/README.md"]},
+      "limitations": ["The archived repository is a redirect only for current comparison.", "Its stars and historical release must not be added to or treated as equivalent to the active target."]
+    },
+    {
+      "requested_repository": "Taimoorkhan1122/prod-readiness",
+      "canonical_repository": "Taimoorkhan1122/prod-readiness",
+      "canonical_url": "https://github.com/Taimoorkhan1122/prod-readiness",
+      "metadata_endpoint": "https://api.github.com/repos/Taimoorkhan1122/prod-readiness",
+      "metadata_observed_at": "2026-09-16T04:06:50.013670+00:00",
+      "stars": 28,
+      "forks": 4,
+      "archived": false,
+      "default_branch": "main",
+      "pushed_at": "2026-09-11T08:07:02Z",
+      "license_spdx_declared": null,
+      "runtime_benchmark_status": "NOT_RUN",
+      "head": {
+        "sha": "7a2782890753d941a09bcdedae4c51c24c5482ed",
+        "url": "https://github.com/Taimoorkhan1122/prod-readiness/commit/7a2782890753d941a09bcdedae4c51c24c5482ed",
+        "committed_at": "2026-09-11T08:07:00Z",
+        "observed_at": "2026-09-16T04:06:50.618979+00:00"
+      },
+      "readme": {
+        "path": "README.md",
+        "url": "https://github.com/Taimoorkhan1122/prod-readiness/blob/7a2782890753d941a09bcdedae4c51c24c5482ed/README.md",
+        "blob_sha": "199fb471f37360b1bb523c2e354cefa31a4a99e6",
+        "sha256": "47dac773f02595e145bc97022938a256af157d05a62d794f982bcb24d3ee2e77",
+        "observed_at": "2026-09-16T04:06:51.081875+00:00",
+        "status": "FETCHED"
+      },
+      "latest_release": {
+        "status": "NONE_RETURNED",
+        "tag": null,
+        "published_at": null,
+        "url": null,
+        "observed_at": "2026-09-16T04:06:51.714738+00:00",
+        "endpoint_error": "gh: Not Found (HTTP 404)",
+        "interpretation": "Latest-release endpoint returned no release; this is not an inactivity finding."
+      },
+      "product_type": "readiness_audit",
+      "capabilities": {
+        "discovery": {"status": "OUT_OF_SCOPE", "observation": "The reviewed audit gathers launch-risk context rather than product discovery.", "sources": ["https://github.com/Taimoorkhan1122/prod-readiness/blob/7a2782890753d941a09bcdedae4c51c24c5482ed/README.md"]},
+        "planning": {"status": "OUT_OF_SCOPE", "observation": "The reviewed audit produces remediation findings but stops before implementation planning.", "sources": ["https://github.com/Taimoorkhan1122/prod-readiness/blob/7a2782890753d941a09bcdedae4c51c24c5482ed/README.md"]},
+        "build": {"status": "OUT_OF_SCOPE", "observation": "The reviewed workflow is read-only except for its audit output area.", "sources": ["https://github.com/Taimoorkhan1122/prod-readiness/blob/7a2782890753d941a09bcdedae4c51c24c5482ed/README.md"]},
+        "review": {"status": "EXPLICIT", "observation": "Coordinated specialist lenses and finding review are documented.", "sources": ["https://github.com/Taimoorkhan1122/prod-readiness/blob/7a2782890753d941a09bcdedae4c51c24c5482ed/README.md"]},
+        "verification": {"status": "EXPLICIT", "observation": "Evidence scan, absence ledger, finding validation, go/no-go reporting, and resume are documented.", "sources": ["https://github.com/Taimoorkhan1122/prod-readiness/blob/7a2782890753d941a09bcdedae4c51c24c5482ed/README.md"]},
+        "operations": {"status": "PARTIAL", "observation": "Deployment, reliability, and operations risks are audited; the tool does not deploy or remediate.", "sources": ["https://github.com/Taimoorkhan1122/prod-readiness/blob/7a2782890753d941a09bcdedae4c51c24c5482ed/README.md"]}
+      },
+      "install_runtime": {"status": "EXPLICIT", "observation": "A native Claude plugin, scripts, dashboard, export, and manual-copy path for other hosts are documented; no release was returned. Host qualification and execution were not performed.", "sources": ["https://github.com/Taimoorkhan1122/prod-readiness/blob/7a2782890753d941a09bcdedae4c51c24c5482ed/README.md"]},
+      "limitations": ["Repository license metadata was null at observation and was not resolved here.", "Source-only inspection cannot prove live-system or external operational state."]
+    },
+    {
+      "requested_repository": "mercari/production-readiness-checklist",
+      "canonical_repository": "mercari/production-readiness-checklist",
+      "canonical_url": "https://github.com/mercari/production-readiness-checklist",
+      "metadata_endpoint": "https://api.github.com/repos/mercari/production-readiness-checklist",
+      "metadata_observed_at": "2026-09-16T04:06:51.000345+00:00",
+      "stars": 944,
+      "forks": 101,
+      "archived": false,
+      "default_branch": "master",
+      "pushed_at": "2021-11-22T00:03:30Z",
+      "license_spdx_declared": "MIT",
+      "runtime_benchmark_status": "NOT_RUN",
+      "head": {
+        "sha": "5834a23b508335d49d94e4dd8055ed1c58236b8e",
+        "url": "https://github.com/mercari/production-readiness-checklist/commit/5834a23b508335d49d94e4dd8055ed1c58236b8e",
+        "committed_at": "2021-05-17T10:40:59Z",
+        "observed_at": "2026-09-16T04:06:52.660382+00:00"
+      },
+      "readme": {
+        "path": "README.md",
+        "url": "https://github.com/mercari/production-readiness-checklist/blob/5834a23b508335d49d94e4dd8055ed1c58236b8e/README.md",
+        "blob_sha": "9f4930c72156d3e2b6584ef56f2e650afa316294",
+        "sha256": "25646acdecffaea1a7e896ea44016f8cee20f29ce98dc1fecb64428333dbd241",
+        "observed_at": "2026-09-16T04:06:53.176187+00:00",
+        "status": "FETCHED"
+      },
+      "latest_release": {
+        "status": "NONE_RETURNED",
+        "tag": null,
+        "published_at": null,
+        "url": null,
+        "observed_at": "2026-09-16T04:06:53.739404+00:00",
+        "endpoint_error": "gh: Not Found (HTTP 404)",
+        "interpretation": "Latest-release endpoint returned no release; this is not an inactivity finding."
+      },
+      "product_type": "readiness_checklist",
+      "capabilities": {
+        "discovery": {"status": "NOT_EVIDENCED_IN_REVIEWED_SCOPE", "observation": "The reviewed checklist is technical readiness guidance, not documented user or product discovery.", "sources": ["https://github.com/mercari/production-readiness-checklist/blob/5834a23b508335d49d94e4dd8055ed1c58236b8e/README.md"]},
+        "planning": {"status": "PARTIAL", "observation": "Design-phase architecture, security, SLO, and ownership controls precede implementation.", "sources": ["https://github.com/mercari/production-readiness-checklist/blob/5834a23b508335d49d94e4dd8055ed1c58236b8e/docs/references/design-checklist.md"]},
+        "build": {"status": "OUT_OF_SCOPE", "observation": "Teams implement; the public repository supplies reference checklists.", "sources": ["https://github.com/mercari/production-readiness-checklist/blob/5834a23b508335d49d94e4dd8055ed1c58236b8e/README.md"]},
+        "review": {"status": "EXPLICIT", "observation": "Service self-check followed by architect or SRE review is documented.", "sources": ["https://github.com/mercari/production-readiness-checklist/blob/5834a23b508335d49d94e4dd8055ed1c58236b8e/docs/guides/check-production-readiness.md"]},
+        "verification": {"status": "EXPLICIT", "observation": "Human evidence submission, N/A justification, and readiness levels are documented.", "sources": ["https://github.com/mercari/production-readiness-checklist/blob/5834a23b508335d49d94e4dd8055ed1c58236b8e/docs/references/production-readiness-level.md"]},
+        "operations": {"status": "EXPLICIT", "observation": "Pre-production checks cover rollback, observability, on-call, capacity, recovery, and data stores.", "sources": ["https://github.com/mercari/production-readiness-checklist/blob/5834a23b508335d49d94e4dd8055ed1c58236b8e/docs/references/pre-production-checklist.md"]}
+      },
+      "install_runtime": {"status": "OUT_OF_SCOPE", "observation": "The reviewed source is a static documentation/checklist repository; an executable package, runner, resume engine, or host adapter was not evidenced.", "sources": ["https://github.com/mercari/production-readiness-checklist/blob/5834a23b508335d49d94e4dd8055ed1c58236b8e/README.md"]},
+      "limitations": ["The inspected public subset dates from 2021 and was not treated as current organization policy.", "The checklist is biased toward its documented service/platform context and was not generalized to other stacks."]
+    },
+    {
+      "requested_repository": "vuckuola619/e2e",
+      "canonical_repository": "vuckuola619/e2e",
+      "canonical_url": "https://github.com/vuckuola619/e2e",
+      "metadata_endpoint": "https://api.github.com/repos/vuckuola619/e2e",
+      "metadata_observed_at": "2026-09-16T04:06:51.998851+00:00",
+      "stars": 0,
+      "forks": 0,
+      "archived": false,
+      "default_branch": "main",
+      "pushed_at": "2026-09-16T03:57:08Z",
+      "license_spdx_declared": "MIT",
+      "runtime_benchmark_status": "NOT_RUN",
+      "comparison_role": "self_baseline_pre_lifecycle",
+      "head": {
+        "sha": "08e6e66dfe93c18a7be81b1943916903f7c030b9",
+        "url": "https://github.com/vuckuola619/e2e/commit/08e6e66dfe93c18a7be81b1943916903f7c030b9",
+        "committed_at": "2026-09-16T03:56:28Z",
+        "observed_at": "2026-09-16T04:06:53.593020+00:00"
+      },
+      "readme": {
+        "path": "README.md",
+        "url": "https://github.com/vuckuola619/e2e/blob/08e6e66dfe93c18a7be81b1943916903f7c030b9/README.md",
+        "blob_sha": "693211f83a826b09b3c046260e75f81304175c11",
+        "sha256": "29bc4e4411143b7fb774347e63aaae1e0eb05cf2e7676d3abd16e014f6ae9e72",
+        "observed_at": "2026-09-16T04:06:54.518729+00:00",
+        "status": "FETCHED"
+      },
+      "latest_release": {
+        "status": "NONE_RETURNED",
+        "tag": null,
+        "published_at": null,
+        "url": null,
+        "observed_at": "2026-09-16T04:06:55.176350+00:00",
+        "endpoint_error": "gh: Not Found (HTTP 404)",
+        "interpretation": "No release was returned in the captured endpoint result; this is not an inactivity finding."
+      },
+      "product_type": "readiness_audit",
+      "capabilities": {
+        "discovery": {"status": "NOT_EVIDENCED_IN_REVIEWED_SCOPE", "observation": "The pre-lifecycle README reviewed here describes readiness guidance; product discovery was outside its documented scope.", "sources": ["https://github.com/vuckuola619/e2e/blob/08e6e66dfe93c18a7be81b1943916903f7c030b9/README.md"]},
+        "planning": {"status": "EXPLICIT", "observation": "Applicability, WBS, controls, tasks, and evidence targets are documented for readiness work.", "sources": ["https://github.com/vuckuola619/e2e/blob/08e6e66dfe93c18a7be81b1943916903f7c030b9/README.md"]},
+        "build": {"status": "PARTIAL", "observation": "The pre-lifecycle README documents a host-led IMPLEMENT_AND_VERIFY path, but no bundled automation engine, package, or host adapter.", "sources": ["https://github.com/vuckuola619/e2e/blob/08e6e66dfe93c18a7be81b1943916903f7c030b9/README.md"]},
+        "review": {"status": "EXPLICIT", "observation": "Reviewer, findings, acceptance, and proof-set concepts are documented.", "sources": ["https://github.com/vuckuola619/e2e/blob/08e6e66dfe93c18a7be81b1943916903f7c030b9/README.md"]},
+        "verification": {"status": "EXPLICIT", "observation": "Four readiness decisions, evidence identity, freshness, and technical-versus-authorization boundaries are documented.", "sources": ["https://github.com/vuckuola619/e2e/blob/08e6e66dfe93c18a7be81b1943916903f7c030b9/README.md"]},
+        "operations": {"status": "PARTIAL", "observation": "SRE, recovery, and operational controls are in the assurance baseline; no runtime collection or operations engine was documented.", "sources": ["https://github.com/vuckuola619/e2e/blob/08e6e66dfe93c18a7be81b1943916903f7c030b9/README.md"]}
+      },
+      "install_runtime": {"status": "NOT_EVIDENCED_IN_REVIEWED_SCOPE", "observation": "The pre-lifecycle README explicitly described guidance/templates and no working command, package, or host adapter.", "sources": ["https://github.com/vuckuola619/e2e/blob/08e6e66dfe93c18a7be81b1943916903f7c030b9/README.md"]},
+      "limitations": ["This baseline predates the lifecycle expansion and is not evidence for later working-tree changes.", "No e2e runtime, host, adapter, benchmark, or support claim was tested in this comparison."]
+    },
+    {
+      "requested_repository": "open-gsd/gsd-core",
+      "canonical_repository": "open-gsd/gsd-core",
+      "canonical_url": "https://github.com/open-gsd/gsd-core",
+      "metadata_endpoint": "https://api.github.com/repos/open-gsd/gsd-core",
+      "metadata_observed_at": "2026-09-16T04:08:49.952622+00:00",
+      "stars": 9493,
+      "forks": 685,
+      "archived": false,
+      "default_branch": "next",
+      "pushed_at": "2026-09-16T03:31:36Z",
+      "license_spdx_declared": "MIT",
+      "runtime_benchmark_status": "NOT_RUN",
+      "selection_reason": "Active home linked by the pinned gsd-build/get-shit-done README.",
+      "head": {
+        "sha": "092d9256b89c9f6055928f3fd21b633036704dbc",
+        "url": "https://github.com/open-gsd/gsd-core/commit/092d9256b89c9f6055928f3fd21b633036704dbc",
+        "committed_at": "2026-09-16T03:31:36Z",
+        "observed_at": "2026-09-16T04:08:52.065230+00:00"
+      },
+      "readme": {
+        "path": "README.md",
+        "url": "https://github.com/open-gsd/gsd-core/blob/092d9256b89c9f6055928f3fd21b633036704dbc/README.md",
+        "blob_sha": "82770333164cd599dfa2f1ee44cc66997913cc40",
+        "sha256": "66fe062ee3705af835b09ffa8da112fd14bc8a6025f0d4fb22b4291d353268a9",
+        "observed_at": "2026-09-16T04:08:52.065278+00:00",
+        "status": "FETCHED"
+      },
+      "latest_release": {
+        "status": "PUBLISHED",
+        "tag": "v1.14.0",
+        "published_at": "2026-09-14T00:01:36Z",
+        "url": "https://github.com/open-gsd/gsd-core/releases/tag/v1.14.0",
+        "observed_at": "2026-09-16T04:08:53.306585+00:00"
+      },
+      "product_type": "delivery_orchestrator",
+      "capabilities": {
+        "discovery": {"status": "EXPLICIT", "observation": "New-project intake, vision, constraints, requirements, roadmap, and optional research agents are documented.", "sources": ["https://github.com/open-gsd/gsd-core/blob/092d9256b89c9f6055928f3fd21b633036704dbc/README.md"]},
+        "planning": {"status": "EXPLICIT", "observation": "Discuss, research, atomic plans, and plan checking are documented.", "sources": ["https://github.com/open-gsd/gsd-core/blob/092d9256b89c9f6055928f3fd21b633036704dbc/docs/tutorials/your-first-project.md"]},
+        "build": {"status": "EXPLICIT", "observation": "Parallel execution waves, fresh-context executors, and task commits are documented.", "sources": ["https://github.com/open-gsd/gsd-core/blob/092d9256b89c9f6055928f3fd21b633036704dbc/README.md"]},
+        "review": {"status": "PARTIAL", "observation": "Plan checking and verification are in the loop; separate code/security review capabilities were not fully reviewed here.", "sources": ["https://github.com/open-gsd/gsd-core/blob/092d9256b89c9f6055928f3fd21b633036704dbc/docs/explanation/the-phase-loop.md"]},
+        "verification": {"status": "EXPLICIT", "observation": "Automated requirement/goal verification, guided UAT, and fix plans are documented.", "sources": ["https://github.com/open-gsd/gsd-core/blob/092d9256b89c9f6055928f3fd21b633036704dbc/docs/explanation/the-phase-loop.md"]},
+        "operations": {"status": "PARTIAL", "observation": "Ship opens a PR and archives state; a first-class production deploy and steady-state operations phase was not evidenced in the inspected core loop.", "sources": ["https://github.com/open-gsd/gsd-core/blob/092d9256b89c9f6055928f3fd21b633036704dbc/README.md"]}
+      },
+      "install_runtime": {"status": "EXPLICIT", "observation": "Published npm/release material, installers, transformations, hooks, update, and uninstall are documented; HEAD branch `next` is separate from v1.14.0.", "sources": ["https://github.com/open-gsd/gsd-core/blob/092d9256b89c9f6055928f3fd21b633036704dbc/docs/how-to/install-on-your-runtime.md"]},
+      "limitations": ["Pinned install and tutorial pages document different Node prerequisites; the discrepancy was recorded rather than resolved silently.", "HEAD documentation may describe work not present in the published release; no runtime was executed."]
+    }
+  ]
+}

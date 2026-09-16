@@ -2,6 +2,23 @@
 
 This file describes how to use the `e2e` skill as a portable planning and assessment guide. It does not provide a runner, plugin, command-line program, or host adapter. The host decides which tools exist and must report unavailable capabilities explicitly.
 
+## 0. Locate the work in the product lifecycle
+
+Before building the assessment packet, identify the current product-lifecycle
+context when the request has product or delivery intent. Choose one current
+phase from `IDEA`, `DISCOVERY`, `PRODUCT_PLANNING`, `DESIGN`, `BUILD`, `REVIEW`,
+`QA`, `RELEASE`, `OPERATE`, or `ITERATE`. Record a bounded `phase_span` when
+more than one phase is in scope, the entry point, upstream artifacts, and the
+intended next decision. Use `UNKNOWN` with a reason when the request does not
+establish a phase or artifact identity.
+
+The phase is context; the selected assessment mode remains the action boundary.
+Keep exactly one of `PLAN_ONLY`, `READ_ONLY_AUDIT`, `IMPLEMENT_AND_VERIFY`, or
+`RELEASE_REVIEW`. A phase does not grant permission, create evidence, or imply a
+release verdict. Work may start at any phase: an idea can be planned without a
+repository, an existing product can enter at `OPERATE`, a bug can enter at
+`BUILD`, `REVIEW`, or `QA`, and `ITERATE` can route to any earlier phase.
+
 ## 1. Establish the assessment packet
 
 Create a small index for each assessment with these fields:
@@ -10,6 +27,7 @@ Create a small index for each assessment with these fields:
 | --- | --- |
 | Subject | Product, service, workflow, repository, model-backed feature, or release artifact in scope |
 | Scope | Included paths, services, journeys, tenants, environments, controls, and exclusions |
+| Lifecycle | `current_phase`, bounded `phase_span`, entry point, upstream artifacts, and intended next decision when relevant |
 | Mode | Exactly one of `PLAN_ONLY`, `READ_ONLY_AUDIT`, `IMPLEMENT_AND_VERIFY`, `RELEASE_REVIEW` |
 | Identity | Revision, dirty-state record, artifact digest, image/model/prompt/corpus identity where relevant |
 | Authorization | User request, authorized actions, expiration or boundary, and unresolved owner decisions |
@@ -19,6 +37,25 @@ Create a small index for each assessment with these fields:
 | Status | `DRAFT`, `REVIEWED`, or `APPROVED` for the document itself; check status remains separate |
 
 Keep observed facts, assumptions, proposed controls, owner decisions, and `UNKNOWN` items in separate sections. An absent file is not proof that a control is absent; an existing file, test, workflow, dashboard, or score is not proof that the control passed.
+
+## 1a. Select product-planning depth
+
+Choose planning depth from uncertainty, risk, product impact, coordination cost,
+regulatory or privacy concerns, and operational impact. The lifecycle is
+nonlinear; do not require every artifact or phase for every request.
+
+| Depth | Use | Resource and output |
+| --- | --- | --- |
+| **Direct** | A small, clear, low-risk change has a known outcome and bounded impact. | Use [`task.md`](../assets/task.md), the checklist, and applicable checks; record why a product brief or research plan is unnecessary. |
+| **Brief** | Product intent, affected actors, alternatives, or material uncertainty needs a durable statement. | Use [`product-brief.md`](../assets/product-brief.md), and add [`discovery-plan.md`](../assets/discovery-plan.md) when research is proposed or needed. |
+| **Full** | Multi-team or multi-epic work, high product or operational impact, or substantial safety, privacy, legal, or feasibility tradeoffs need coordination. | Link the brief and applicable discovery plan to [`product-plan.md`](../assets/product-plan.md), design artifacts, assurance controls, rollout, operations, and measurement. |
+
+An idea without a repository or artifact is a valid `PLAN_ONLY` subject. Record
+identity as `UNKNOWN` with a reason and plan from the supplied context; do not
+invent evidence or block planning while waiting for an artifact that does not
+yet exist. Use `N/A` only when an artifact is genuinely outside scope and the
+reason and reassessment trigger are recorded. Planned research and checks stay
+`NOT_RUN`.
 
 ## 2. Route one entrypoint
 
@@ -40,7 +77,17 @@ Choose no more than one primary provider for a role that has canonical authority
 
 ### `PLAN_ONLY`
 
-Produce a scope and applicability matrix, requirements, gates, checklist trace, task graph, verification commands, evidence targets, risks, ownership, and cleanup plan. Read-only reconnaissance of the authorized subject is allowed when it grounds the plan; record its identity and limitations. Commands that are not known remain `UNKNOWN`. Do not implement, verify runtime behavior, install a tool, contact a provider, or mutate external state. Writing the requested plan or authorized run output does not require a new permission.
+For an assurance or readiness scope, produce a scope and applicability matrix,
+requirements, gates, checklist trace, task graph, verification commands,
+evidence targets, risks, ownership, and cleanup plan. For pure lifecycle or
+product planning, produce only the selected artifact(s) at the chosen depth,
+open questions, proposals, and any attributed or pending owner decision; add
+assurance gates only when that scope is relevant. Read-only reconnaissance of
+the authorized subject is allowed when it grounds the plan; record its identity
+and limitations. Commands that are not known remain `UNKNOWN`. Do not
+implement, verify runtime behavior, install a tool, contact a provider, or
+mutate external state. Writing the requested plan or authorized run output does
+not require a new permission.
 
 ### `READ_ONLY_AUDIT`
 
@@ -56,13 +103,28 @@ Bind the review to the exact candidate artifact and release scope. Check that th
 
 ## 4. Build the trace and DAG
 
-For every material checklist item, create a requirement and gate, then one or more atomic tasks:
+For every material checklist item in an assurance scope, create a requirement
+and gate, then one or more atomic tasks. When product artifacts exist, link
+their IDs or paths before the requirement; link operational signals and
+iteration decisions after the evidence or release record. Product-only work
+may link the selected lifecycle artifacts directly without inventing a
+checklist row or gate:
 
 `CHK-* → TSK-* → REQ-* → GATE-* → EVD-*`
 
+The extended lifecycle chain is conceptual:
+
+`idea/hypothesis → discovery evidence → product brief/plan → requirement/design → task/check → evidence/finding → release decision → operational signal → iteration decision`
+
 Use the task template in [../assets/task.md](../assets/task.md). A subtask has one main verb, one outcome, one owner role, one environment, and one verification. Include precondition, action, expected state or data effect, evidence capture, and cleanup in its acceptance. A task may be `DONE` while its check is `NOT_RUN`; documentation completion does not create runtime evidence.
 
-Draw a dependency graph and run a cycle check before execution. Report topological order, parallel lanes, critical path, external credentials or decisions, and release-blocking gates. Separate the pre-promotion graph from release and post-deployment work. Keep deployment and final human sign-off as distinct tasks even when the selected mode permits implementation.
+When dependencies actually exist, draw a dependency graph and run a cycle
+check before execution. For one direct task, record no dependency graph or
+`N/A` with a reason. Where a graph is useful, report topological order, parallel
+lanes, critical path, external credentials or decisions, and release-blocking
+gates. Separate the pre-promotion graph from release and post-deployment work.
+Keep deployment and final human sign-off as distinct tasks even when the
+selected mode permits implementation.
 
 Use `DEFERRED` only with a reason, owner, expiry, and re-entry trigger. Use `N/A` only with applicability evidence and a reassessment trigger. If a finding has no fix in scope, create a time-bounded risk-acceptance task; an unowned finding is not resolved by a report.
 
@@ -80,4 +142,32 @@ When a graph or compact view is stale, preserve the warning and coverage. Read t
 
 ## 7. Close the assessment
 
-Publish a findings table, evidence manifest, decision proof set, limitations, and shortest executable path to the next decision. Use exactly one final decision: `READY`, `CONDITIONALLY READY`, `NOT READY`, or `UNDETERMINED`. A positive decision requires applicable mandatory evidence, candidate identity, and required human acceptance. A conditional decision may contain only nonblocking, bounded, accepted obligations. The decision does not grant authorization to deploy or publish.
+For a readiness or assurance assessment, publish a findings table, evidence
+manifest, decision proof set, limitations, and shortest executable path to the
+next decision. Use exactly one final decision: `READY`, `CONDITIONALLY READY`,
+`NOT READY`, or `UNDETERMINED`. A positive decision requires applicable
+mandatory evidence, candidate identity, and required human acceptance. A
+conditional decision may contain only nonblocking, bounded, accepted
+obligations. The decision does not grant authorization to deploy or publish.
+
+For pure product or lifecycle planning, close the requested brief, discovery
+plan, or product plan with its open questions, proposed next step, and an
+attributed owner decision only when one actually exists. A pending or missing
+decision remains `UNKNOWN`; this planning closeout does not require or create a
+readiness verdict.
+
+## 8. Close with operations and iteration
+
+When the work reaches `OPERATE` or `ITERATE`, preserve operational
+observations, support or incident signals, measurement limits, and the named
+decision owner. Choose the phase to revisit and create a new artifact revision
+with links to the prior records and a `supersedes` relation where it replaces
+one. Never overwrite historical evidence or turn a signal into a product or
+release conclusion without provenance.
+
+Keep these states separate: phase completeness, artifact document status,
+owner approval, task completion, check status, readiness decision, human
+acceptance, and authorization. Discovery dispositions such as `continue`,
+`reframe`, `pause`, and `stop` are product-learning decisions; they are not a
+fifth readiness decision. A pure product plan may end with a proposal and a
+pending or `UNKNOWN` owner decision rather than a release verdict.

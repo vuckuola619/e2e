@@ -222,5 +222,7 @@ Before sharing an evidence pack, a reviewer should confirm that:
 - redaction and context loss are visible; and
 - the decision, acceptance, and authorization records are separate.
 
-The initial release has no real evidence to review. Future qualification must
-show actual command, host, tool, and version details before advertising support.
+No executed product-readiness or comparative runtime evidence is included.
+Public-source metadata is documented in the [source comparison](comparison.md).
+Future qualification must show actual command, host, tool, and version details
+before advertising support.

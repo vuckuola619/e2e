@@ -1,11 +1,16 @@
 ---
 name: e2e
-description: Assess production readiness, QA, UAT, end-to-end journeys, and release evidence, including explicitly authorized remediation and verification.
+description: Guide product ideas, discovery, planning, design, build, review, QA, release, operations, iteration, and evidence-based readiness, including explicitly authorized remediation and verification.
 ---
 
-# E2E readiness workflow
+# E2E product lifecycle and readiness workflow
 
-Use this skill when a user asks for an end-to-end quality, security, reliability, accessibility, AI, release, or acceptance assessment. It is advisory guidance. The host performs any inspection or execution, and the host's available tools, permissions, and limitations must remain visible.
+Use this skill when a user asks for product idea shaping, discovery, planning,
+design, build, review, QA, release, operations, iteration, or an end-to-end
+quality, security, reliability, accessibility, AI, release, or acceptance
+assessment. It is advisory guidance. The host performs any inspection or
+execution, and the host's available tools, permissions, and limitations must
+remain visible.
 
 ## Operating contract
 
@@ -18,24 +23,64 @@ Start with one user entrypoint and one canonical evidence and decision authority
 | `IMPLEMENT_AND_VERIFY` | Make explicitly authorized changes and verify the resulting subject | Limit edits to the authorized scope; record before/after identity and verification evidence |
 | `RELEASE_REVIEW` | Evaluate a candidate artifact and its release evidence | Review the candidate and release record; deployment, publication, and approval remain separate authorized actions |
 
-If the user does not specify a mode, infer the least mutating mode that satisfies the request and state the inference. A documentation request is `PLAN_ONLY` unless the user clearly authorizes execution. Read-only reconnaissance and writing the authorized plan/run output do not require a new permission when already covered by the request. Never turn an assessment result into authorization to deploy, publish, commit, spend, install, or contact an external system.
+If the user does not specify a mode, infer the least mutating mode that satisfies the request and state the inference. A documentation or product-planning request is `PLAN_ONLY` unless the user clearly authorizes execution. Read-only reconnaissance and writing the authorized plan/run output do not require a new permission when already covered by the request. Never turn an assessment result into authorization to deploy, publish, commit, spend, install, or contact an external system.
 
 Record before work begins:
 
 - subject, scope, environment, source revision or artifact identity, and dirty or changed state;
+- when lifecycle context matters, `current_phase`, bounded `phase_span`, entry
+  point, prior artifacts, and the intended next decision;
 - user authorization, owner, reviewer, sensitive-data boundary, and any external decision still required;
 - applicable domains and why each selected or omitted module is relevant;
 - assumptions, observed facts, proposals, owner decisions, and `UNKNOWN` items as separate classes.
 
-Read the supporting files progressively. Read [workflow.md](references/workflow.md) for mode routing, authorization, task flow, and resume rules. Read [controls.md](references/controls.md) when selecting or tailoring controls across the 16 domains. Read [evidence.md](references/evidence.md) when recording observations, importing tool results, constructing context views, or making a release decision. Do not load all references when the request does not need them.
+Read the supporting files progressively. Read [workflow.md](references/workflow.md) for mode routing, authorization, task flow, and resume rules. Read [lifecycle.md](references/lifecycle.md) only when the request has product-lifecycle or planning context. At the selected planning depth, read [product-brief.md](assets/product-brief.md), [discovery-plan.md](assets/discovery-plan.md), or [product-plan.md](assets/product-plan.md) as needed. Read [controls.md](references/controls.md) when selecting or tailoring controls across the 16 domains. Read [evidence.md](references/evidence.md) when recording observations, importing tool results, constructing context views, or making a release decision. Do not load all references when the request does not need them.
+
+## Lifecycle context
+
+When lifecycle context matters, choose one current phase from `IDEA`,
+`DISCOVERY`, `PRODUCT_PLANNING`, `DESIGN`, `BUILD`, `REVIEW`, `QA`, `RELEASE`,
+`OPERATE`, or `ITERATE`. Record a bounded phase span only when the request
+covers more than one phase. A phase is context; the selected mode is the action
+boundary. Phases do not grant permissions, create evidence, or add assessment
+modes. A request may start at any phase, and `ITERATE` may route to any earlier
+phase.
+
+Choose the smallest useful planning depth. A small, clear change can use the
+existing task and check flow (**Direct**). Material product intent or uncertainty
+can use the product brief and, when needed, a discovery plan (**Brief**).
+Multi-team, high-impact, or operationally consequential work can add the
+product plan and applicable design and assurance artifacts (**Full**). Do not
+make a brief, research study, PRD, or all ten phases a prerequisite for a clear
+small fix.
+
+For a pure product-planning request, record a next-step recommendation such as
+`validate`, `pivot` or `reframe`, `pause`, or `build` as a proposal. Record an owner
+decision only when an identified authorized owner has actually decided; a
+pending decision remains `UNKNOWN`. Do not force product planning to end in a
+release verdict. The four canonical readiness decisions apply when the work is
+an assurance or release assessment; they remain separate from lifecycle
+dispositions and authorization.
 
 ## Control and task selection
 
-Use [checklist.md](assets/checklist.md) as a starting inventory. Applicability is a decision with a reason and owner; `N/A` requires evidence and a reassessment trigger. Split rows when controls, owners, environments, or verification procedures differ. For each applicable or material unknown, maintain this trace:
+For an assurance or readiness scope, use [checklist.md](assets/checklist.md) as
+a starting inventory. Applicability is a decision with a reason and owner;
+`N/A` requires evidence and a reassessment trigger. Split rows when controls,
+owners, environments, or verification procedures differ. For each applicable or
+material unknown, maintain this trace:
 
 `CHK-* → TSK-* → REQ-* → GATE-* → EVD-*`
 
-Every task has one observable outcome, one primary action, one environment, one accountable role, one verifier, executable preconditions, expected output, evidence targets, and cleanup or rollback. If a command or capability is not known, write `UNKNOWN` and create a discovery task. Do not invent commands, source identities, timestamps, hashes, approvals, or runtime results.
+For product-only planning, use the selected brief, discovery plan, or product
+plan and add assurance controls only when their scope applies. Use the task
+asset for implementation work or dependencies that actually need a task; a
+single planning artifact does not require a checklist or release gate. Every
+assurance task has one observable outcome, one primary action, one environment,
+one accountable role, one verifier, executable preconditions, expected output,
+evidence targets, and cleanup or rollback. If a command or capability is not
+known, write `UNKNOWN` and create a discovery task. Do not invent commands,
+source identities, timestamps, hashes, approvals, or runtime results.
 
 Use one router to choose advisory guidance, control definitions, observation importers, context views, and release evaluation. A module name or score cannot promote guidance into a control, an observation into a verdict, or a planned capability into a completed check. Keep module content and transitive resources closed: selected resources, schemas, prompts, scripts, notices, and licenses must be declared and reviewable before reuse.
 
@@ -59,16 +104,23 @@ Keep evidence classes distinct: `NEW_RUN`, `STATIC_REVIEW`, `HISTORICAL`, `OWNER
 
 Keep raw or sensitive evidence in an authorized private location and export a redacted view only with a manifest. Hashes identify bytes; they do not prove truth, actor identity, or semantic correctness. A stale or partial graph must show coverage and freshness limits. Direct source confirmation may create a new observation, but it does not silently repair the stale graph.
 
-## Decision policy
+## Decision policy for readiness and release assessments
 
-The canonical result is exactly one of:
+For a readiness or release assessment, the canonical result is exactly one of:
 
 - `READY`: every applicable mandatory gate has fresh valid proof, candidate identity matches, required human acceptance is complete, and no release blocker remains.
 - `CONDITIONALLY READY`: every mandatory gate still passes; only bounded nonblocking conditions remain, with named owner, deadline, monitoring, acceptance, and rollback or kill criteria.
 - `NOT READY`: a mandatory gate fails, a release blocker is present, a side effect is proven unsafe, a recovery control is proven to fail, or material risk lacks acceptance.
 - `UNDETERMINED`: evidence, identity, access, applicability, or an owner decision is insufficient to choose a positive or negative result.
 
-`READY` never grants authorization. For every decision, publish a proof set mapping `GATE-* → EVD-*`, identity and revision, exceptions or failures, named human acceptance, decision time when a real decision occurs, and the shortest executable path to the next decision. Do not average away security, privacy, authorization, legal, recovery, or unsupported-claim failures.
+`READY` never grants authorization. For every readiness decision, publish a
+proof set mapping `GATE-* → EVD-*`, identity and revision, exceptions or
+failures, named human acceptance, decision time when a real decision occurs, and
+the shortest executable path to the next decision. Do not average away
+security, privacy, authorization, legal, recovery, or unsupported-claim
+failures. Product-planning work may instead end with an attributed owner
+decision, or with a proposal while the owner decision remains pending or
+`UNKNOWN`; that record is not a release verdict.
 
 ## Context, graph, and tool boundaries
 

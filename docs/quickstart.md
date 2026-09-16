@@ -8,12 +8,16 @@ provide a runnable command or automatic collectors.
 
 Have these inputs available:
 
-1. A concrete goal, such as checking a critical user journey before a release.
+1. A concrete goal, such as checking a critical user journey before a release
+   or deciding what to learn about a new idea.
 2. The target repository, service, or artifact and the scope you are allowed to
-   inspect.
-3. The mode that matches the requested work, or enough context to infer it.
-4. A separate run directory for proposed plans and authorized outputs.
-5. Owners and reviewers for the controls that could affect the decision.
+   inspect, if one exists. Idea and product planning can start with context and
+   use `UNKNOWN` for an identity that does not exist yet.
+3. The current lifecycle phase and optional bounded phase span when product or
+   delivery context matters.
+4. The mode that matches the requested work, or enough context to infer it.
+5. A separate run directory for proposed plans and authorized outputs.
+6. Owners and reviewers for the controls that could affect the decision.
 
 Do not place generated reports, raw logs, secrets, backups, or private
 application data in this public repository. Keep the target source tree
@@ -52,7 +56,72 @@ If the mode is omitted, the host infers it from intent and existing
 authorization; it does not ask for the same authorization again. The example
 is a prompt shape, not a runtime result.
 
-## 2. Select one mode
+## 2. Locate the lifecycle context and depth
+
+Choose the current phase from `IDEA`, `DISCOVERY`, `PRODUCT_PLANNING`, `DESIGN`,
+`BUILD`, `REVIEW`, `QA`, `RELEASE`, `OPERATE`, or `ITERATE`. Record a bounded
+span and the entry point when more than one phase is in scope. The phase locates
+the work; the mode below controls the action. A phase does not grant permission
+or create a release verdict.
+
+Choose the smallest useful planning depth:
+
+| Depth | Use | Resource |
+| --- | --- | --- |
+| `Direct` | A clear, small, low-risk existing-project change. | [`task.md`](../skills/e2e/assets/task.md), checklist, and applicable checks. |
+| `Brief` | Product intent, affected actors, alternatives, or material uncertainty needs a durable statement. | [`product-brief.md`](../skills/e2e/assets/product-brief.md), plus [`discovery-plan.md`](../skills/e2e/assets/discovery-plan.md) if research is proposed. |
+| `Full` | Multi-team, high-impact, or operationally consequential work needs coordinated planning. | Brief and discovery plan as applicable, [`product-plan.md`](../skills/e2e/assets/product-plan.md), design, assurance, rollout, and measurement artifacts. |
+
+Do not make product planning a prerequisite for an audit or a small bug fix. A
+plan can be written with no repository or artifact; record `UNKNOWN` and the
+reason, and keep proposed research `NOT_RUN`.
+
+For a product idea with no repository, use this ready-to-copy request:
+
+```text
+Use skills/e2e/SKILL.md for product planning.
+Goal: decide what to learn before considering [idea or problem].
+Phase: IDEA
+Phase span: IDEA, DISCOVERY
+Mode: PLAN_ONLY
+Planning depth: Brief
+Context: [request, constraints, and any observed signals]
+Target: UNKNOWN — no repository or artifact exists yet.
+Output: product brief and proposed discovery plan with hypotheses, alternatives,
+outcomes, non-goals, evidence targets, stop criteria, and next-step proposal.
+Mark research NOT_RUN and leave owner decisions UNKNOWN until attributed.
+```
+
+For a targeted existing-project change, a direct request can be:
+
+```text
+Use skills/e2e/SKILL.md for this authorized change.
+Goal: update the empty state on the existing export screen.
+Target: /path/to/the-authorized-project
+Phase: BUILD
+Mode: IMPLEMENT_AND_VERIFY
+Planning depth: Direct
+Scope: the export screen, its tests, and related copy only.
+Verify: run the applicable existing checks and record fresh evidence.
+```
+
+For a targeted audit, keep the target unchanged:
+
+```text
+Use skills/e2e/SKILL.md for a read-only audit.
+Goal: inspect the sign-in journey's loading, error, keyboard, and recovery states.
+Target: /path/to/the-authorized-project
+Phase: QA
+Mode: READ_ONLY_AUDIT
+Scope: sign-in UI, related configuration, and authorized evidence only.
+Run directory: /path/to/separate-authorized-run
+Output: observations, evidence limits, findings, and unresolved unknowns.
+```
+
+These examples are prompt shapes. They contain no claim that the change,
+research, or audit ran.
+
+## 3. Select one mode
 
 The user's explicit mode wins. Otherwise infer intent and existing authorization
 from the request and record the selected mode. A request to author a prompt,
@@ -60,7 +129,7 @@ plan, checklist, or document is `PLAN_ONLY`.
 
 | Mode | First action | Boundary |
 | --- | --- | --- |
-| `PLAN_ONLY` | Inventory assumptions and create the applicability checklist and WBS; explicitly authorized read-only reconnaissance may ground the plan. | No implementation or runtime validation run is implied. |
+| `PLAN_ONLY` | For assurance work, inventory assumptions and create the applicability checklist and WBS; for product work, create selected lifecycle artifacts at the chosen depth. | No implementation or runtime validation run is implied. |
 | `READ_ONLY_AUDIT` | Inspect authorized files, metadata, and permitted observations. | Keep the target tree byte-for-byte unchanged; report unavailable collectors. |
 | `IMPLEMENT_AND_VERIFY` | Plan first, then make only the authorized change and verify it. | Writes, network, credentials, and other side effects need matching authorization. |
 | `RELEASE_REVIEW` | Bind the review to the exact candidate artifact and evidence bundle. | Produce a decision and proof set; a decision does not authorize deployment. |
@@ -70,7 +139,7 @@ permission through a workflow when its scope and target still match. Record the
 authorization reference and its limits instead of asking again for the same
 action.
 
-## 3. Establish scope and applicability
+## 4. Establish scope and applicability
 
 Start with a complete inventory. Record what was inspected, skipped, unreadable,
 excluded, or outside the authorized boundary. Do not execute repository hooks,
@@ -104,11 +173,11 @@ part of the domain was in scope and the uncovered part stays visible.
 `N/A` requires evidence that the profile does not contain the capability; a
 keyword absence in an incomplete corpus is not enough.
 
-## 4. Build the plan
+## 5. Build the plan
 
 Use [`skills/e2e/assets/checklist.md`](../skills/e2e/assets/checklist.md) for the
 coverage ledger and [`skills/e2e/assets/task.md`](../skills/e2e/assets/task.md)
-for atomic work items. Every applicable control should connect to:
+for atomic work items. For product intent, use the optional [`product-brief.md`](../skills/e2e/assets/product-brief.md), [`discovery-plan.md`](../skills/e2e/assets/discovery-plan.md), and [`product-plan.md`](../skills/e2e/assets/product-plan.md) at the selected depth. Pure product planning can close with those artifacts, open questions, and a proposal or pending owner decision; create assurance controls only when that scope applies. Every applicable control should connect to:
 
 ```text
 requirement -> control -> task -> check run -> evidence -> finding or acceptance -> gate
@@ -123,7 +192,7 @@ Keep the pre-promotion and post-deployment work separate. A release review may
 require production observations, but their collection window, owner, query,
 threshold, and evidence target must be explicit.
 
-## 5. Collect authorized observations
+## 6. Collect authorized observations
 
 Before a check runs, identify the subject:
 
@@ -145,7 +214,7 @@ unavailable. A tool that is installed is not necessarily configured,
 compatible, authorized, or reachable. The report should show which of those
 states was actually observed.
 
-## 6. Review and reconcile
+## 7. Review and reconcile
 
 Use [`skills/e2e/assets/findings.md`](../skills/e2e/assets/findings.md) for
 candidate findings and dispositions. A finding needs an evidence anchor, scope,
@@ -162,10 +231,10 @@ output, parsing, expected coverage, subject identity, and freshness all match
 the applicable control. An error or missing output remains an error, unknown,
 or not-run state according to the recorded cause.
 
-## 7. Produce the decision pack
+## 8. Produce the decision pack
 
 Use [`skills/e2e/assets/run-index.md`](../skills/e2e/assets/run-index.md) to
-index the run. A useful pack includes:
+index the run. For readiness or assurance work, a useful pack includes:
 
 - scope, assumptions, applicability, and authorization boundary;
 - source, artifact, environment, tool, and policy identity;
@@ -175,7 +244,12 @@ index the run. A useful pack includes:
 - selected proof set for each mandatory gate; and
 - decision, limitations, human acceptance, and next executable task.
 
-The four decisions have fixed meanings:
+For pure product planning, include the selected brief, discovery plan, or
+product plan, its hypotheses and evidence limits, proposed next step, and any
+attributed or pending owner decision. Do not force a release verdict onto a
+product-planning artifact.
+
+For a readiness or release review, the four decisions have fixed meanings:
 
 | Decision | Minimum basis |
 | --- | --- |

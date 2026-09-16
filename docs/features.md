@@ -8,7 +8,9 @@ initial release and what still requires implementation and qualification.
 | Feature | Status | Description |
 | --- | --- | --- |
 | One user entrypoint | **AVAILABLE_GUIDANCE** | Start from a goal, target, constraints, mode, and existing authorization. |
+| Product lifecycle guide | **AVAILABLE_GUIDANCE** | Locate work in `IDEA`, `DISCOVERY`, `PRODUCT_PLANNING`, `DESIGN`, `BUILD`, `REVIEW`, `QA`, `RELEASE`, `OPERATE`, or `ITERATE`; phases remain separate from modes. |
 | Four-mode workflow | **AVAILABLE_GUIDANCE** | Use `PLAN_ONLY`, `READ_ONLY_AUDIT`, `IMPLEMENT_AND_VERIFY`, or `RELEASE_REVIEW`. |
+| Progressive product planning | **TEMPLATE** | Use the [product brief](../skills/e2e/assets/product-brief.md), [discovery plan](../skills/e2e/assets/discovery-plan.md), and [product plan](../skills/e2e/assets/product-plan.md) at Direct, Brief, or Full depth. |
 | Applicability ledger | **TEMPLATE** | Keep all sixteen domains visible and record applicability, reason, owner, and trigger. |
 | Work breakdown structure | **TEMPLATE** | Break applicable controls into atomic tasks with dependencies and evidence targets. |
 | Evidence contract | **AVAILABLE_GUIDANCE** | Bind observations to subject, procedure, time, identity, status, and limitations. |
@@ -18,11 +20,23 @@ initial release and what still requires implementation and qualification.
 | Synthetic manifest | **TEMPLATE** | Demonstrate schema shape without pretending that example results were executed. |
 | Selective integration strategy | **AVAILABLE_GUIDANCE** | Keep baseline coverage complete while loading specialist modules only when needed. |
 | Public ecosystem research | **REFERENCE** | Record public observations and uncertainty without vendoring upstream content. |
+| Documentary source comparison | **REFERENCE** | Review revision-pinned public-source capability notes; this is not a head-to-head runtime result. |
+| Controlled effectiveness benchmark | **NOT_RUN** | Equal-task runtime trials, quality measures, and false-readiness results have not been run. |
 
 Use the skill and its resources as a portable starting point. A host still
 performs the work, applies its own authorization model, and supplies any
 collector or sandbox. Availability of a document is not availability of a
-runtime capability.
+runtime capability. Product templates record thinking and handoffs; they do not
+perform research, prove demand, approve a design, create acceptance, or issue a
+release decision.
+
+The lifecycle reference explains nonlinear entry and iteration. A clear small
+change can use the direct task/check path without a brief, discovery study, or
+product plan. See [`docs/comparison.md`](comparison.md) for the documented
+source comparison and [`docs/benchmark-protocol.md`](benchmark-protocol.md) for
+the future controlled protocol; both keep runtime effectiveness claims
+`NOT_RUN` until equal-task trials exist. The associated snapshot is
+[`research/comparison-2026-09-16.json`](../research/comparison-2026-09-16.json).
 
 ## Planned runtime features
 

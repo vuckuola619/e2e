@@ -2,10 +2,25 @@
 
 Create one index per assessment or run directory. Keep historical attempts immutable and link a retry instead of overwriting the previous record.
 
+For a pure product or lifecycle planning activity, omit the `decision` block
+below or set its `value` to `null` with an explicit `assessment: NOT_ASSESSED`.
+Record the proposed next step and any attributed or pending owner decision in
+the lifecycle or product artifact fields. `UNDETERMINED` is a readiness outcome
+for an assurance or release assessment, not a default product-planning verdict.
+
 ```yaml
 run_id: RUN-EXAMPLE-001
 assessment_mode: PLAN_ONLY
 document_status: DRAFT
+lifecycle:
+  current_phase: UNKNOWN
+  phase_span: []
+  entry_point: UNKNOWN
+  planning_depth: UNKNOWN
+  upstream_artifacts: []
+  intended_next_decision: UNKNOWN
+  outcome_signals: []
+  iteration_destination: UNKNOWN
 subject:
   name: UNKNOWN
   scope: UNKNOWN
