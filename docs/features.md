@@ -18,6 +18,7 @@ initial release and what still requires implementation and qualification.
 | Finding and unknown register | **TEMPLATE** | Track evidence anchors, owners, dispositions, deadlines, and discovery paths. |
 | Run index | **TEMPLATE** | Point reviewers to scope, artifacts, checks, findings, acceptance, and decisions. |
 | Synthetic manifest | **TEMPLATE** | Demonstrate schema shape without pretending that example results were executed. |
+| Conditional artifact review | **AVAILABLE_GUIDANCE / TEMPLATE** | Route product-specific copy, rendered visual, and runtime interaction review only for relevant user-facing artifacts. |
 | Selective integration strategy | **AVAILABLE_GUIDANCE** | Keep baseline coverage complete while loading specialist modules only when needed. |
 | Public ecosystem research | **REFERENCE** | Record public observations and uncertainty without vendoring upstream content. |
 | Documentary source comparison | **REFERENCE** | Review revision-pinned public-source capability notes; this is not a head-to-head runtime result. |
@@ -29,6 +30,13 @@ collector or sandbox. Availability of a document is not availability of a
 runtime capability. Product templates record thinking and handoffs; they do not
 perform research, prove demand, approve a design, create acceptance, or issue a
 release decision.
+
+The conditional artifact review is described in
+[`docs/anti-slop.md`](anti-slop.md), with the routed guidance in
+[`skills/e2e/references/artifact-quality.md`](../skills/e2e/references/artifact-quality.md)
+and the copyable matrix in
+[`skills/e2e/assets/artifact-review.md`](../skills/e2e/assets/artifact-review.md).
+It does not add modes, phases, domains, or canonical checks.
 
 The lifecycle reference explains nonlinear entry and iteration. A clear small
 change can use the direct task/check path without a brief, discovery study, or

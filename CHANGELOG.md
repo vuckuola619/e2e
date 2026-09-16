@@ -13,6 +13,10 @@
 - Added the portable `e2e` assessment skill with progressive workflow, controls, and evidence references.
 - Added 80 checklist rows covering the 16 canonical domains plus task, findings, run-index, and synthetic evidence-manifest templates.
 - Added public standards baselines and a 36-source ecosystem research register with license-scope notes.
+- Added a conditional artifact-quality reference, copyable review matrix, and
+  focused four-source anti-slop adoption note and research snapshot. The
+  canonical four modes, ten phases, sixteen domains, and 80 checks are
+  unchanged.
 - Added repository hygiene guidance, ignore rules, and the root MIT license.
 
 This release contains advisory guidance, templates, and research. It does not

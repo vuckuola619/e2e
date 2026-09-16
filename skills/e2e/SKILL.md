@@ -36,6 +36,27 @@ Record before work begins:
 
 Read the supporting files progressively. Read [workflow.md](references/workflow.md) for mode routing, authorization, task flow, and resume rules. Read [lifecycle.md](references/lifecycle.md) only when the request has product-lifecycle or planning context. At the selected planning depth, read [product-brief.md](assets/product-brief.md), [discovery-plan.md](assets/discovery-plan.md), or [product-plan.md](assets/product-plan.md) as needed. Read [controls.md](references/controls.md) when selecting or tailoring controls across the 16 domains. Read [evidence.md](references/evidence.md) when recording observations, importing tool results, constructing context views, or making a release decision. Do not load all references when the request does not need them.
 
+When the subject includes user-facing copy or a frontend or visual artifact,
+load [artifact-quality.md](references/artifact-quality.md) conditionally. User
+facing prose uses its copy lane. A frontend or visual artifact being created,
+redesigned, or reviewed uses its copy, rendered visual, and runtime interaction
+lanes. A backend, data, API, or command-only change with no user-facing artifact
+does not require this reference. For `IMPLEMENT_AND_VERIFY` or
+`RELEASE_REVIEW`, use the companion [artifact-review.md](assets/artifact-review.md)
+matrix; for `READ_ONLY_AUDIT`, report numbered findings with exact locations
+and do not edit the target. Preserve quoted, legal, log, and immutable evidence
+without silently rewriting it. An explicitly requested edited draft is a
+separate artifact that preserves original provenance; raw evidence remains
+immutable. Source inspection cannot make an unobserved render or interaction
+check pass.
+
+The artifact review is a filter, not a visual preset or a universal ban list.
+Start a new or redesigned visual artifact with a positive product brief or
+short design direction and, for redesigns, a preservation contract. An explicit
+user or brand choice overrides a generic pattern heuristic when its purpose is
+recorded. Do not infer authorship, assign a numeric taste score, add a new
+assessment mode, lifecycle phase, control domain, or canonical check.
+
 ## Lifecycle context
 
 When lifecycle context matters, choose one current phase from `IDEA`,

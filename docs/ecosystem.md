@@ -15,6 +15,14 @@ The table records observations and curation decisions, not endorsements or runti
 
 Observed content may change after this access date. A public URL is not a byte pin, and a tag or release mentioned by a source does not automatically identify every file reviewed. These entries are research inputs, not an executable registry, lockfile, SBOM, compliance certificate, or evidence of product readiness. The machine-readable view is [research/upstreams.json](../research/upstreams.json).
 
+The focused anti-slop review is kept in a separate four-source snapshot so this
+36-source historical register remains unchanged. See the
+[adoption note](anti-slop.md) and
+[research/anti-slop-2026-09-16.json](../research/anti-slop-2026-09-16.json)
+for exact pins, selected paths, hashes, license observations, and retrieval
+identity. It is documentary guidance only; no upstream runtime was installed
+or compared.
+
 | ID | Category | Public source | Observed lesson | Curation | License status |
 | --- | --- | --- | --- | --- | --- |
 | S01 | Skills | [agentic-awesome-skills](https://github.com/sickn33/antigravity-awesome-skills) (canonical page [here](https://github.com/sickn33/agentic-awesome-skills)) | Catalog and manifest patterns can make modular guidance discoverable; structure does not prove semantic fit. | ADAPT | Declared: MIT package; content scope unresolved |

@@ -1,0 +1,264 @@
+{
+  "schema_version": 1,
+  "research_only": true,
+  "purpose": "Focused documentary record for the anti-slop artifact review adopted into e2e.",
+  "observed_on": "2026-09-16",
+  "scope": "Selected first-party README, skill, evaluation, and LICENSE files listed for each source were reviewed. No upstream repository was installed, executed, or vendored.",
+  "runtime_benchmark_status": "NOT_RUN",
+  "limitations": [
+    "The reviewed scope is limited to the paths listed for each source; it is not a review of every repository file or extension.",
+    "A public URL and commit pin identify the reviewed bytes but do not establish host compatibility, product quality, or effectiveness.",
+    "License observations apply only to the inspected LICENSE file and selected scope; reuse or distribution must respect the applicable license and notice requirements for the authorized scope.",
+    "No authorship inference, numeric taste rating, runtime comparison, or readiness result was produced."
+  ],
+  "sources": [
+    {
+      "id": "AS01",
+      "requested_repository": "petergyang/no-ai-slop",
+      "canonical_repository": "petergyang/no-ai-slop",
+      "canonical_url": "https://github.com/petergyang/no-ai-slop",
+      "decision": "ADAPT",
+      "retrieval": {
+        "method": "Repository metadata and commit-pinned first-party file review",
+        "observed_at": "2026-09-16T06:43:24.172866+00:00"
+      },
+      "head": {
+        "sha": "000650b156983f5159695b441477f4e63b25dc85",
+        "url": "https://github.com/petergyang/no-ai-slop/commit/000650b156983f5159695b441477f4e63b25dc85",
+        "committed_at": "2026-09-02T04:19:00Z"
+      },
+      "license_observed": {
+        "spdx_id": "MIT",
+        "name": "MIT License",
+        "url": "https://api.github.com/licenses/mit",
+        "path": "LICENSE",
+        "notice": "MIT notice and conditions observed in LICENSE bytes; preserve them for reuse within the authorized scope.",
+        "scope": "LICENSE bytes reviewed; preserve the notice and conditions for reuse within the authorized scope."
+      },
+      "reviewed_scope": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/petergyang/no-ai-slop/blob/000650b156983f5159695b441477f4e63b25dc85/README.md",
+          "blob_sha": "82f8b7af7e02918077afb447f8fc83c2d33483ba",
+          "sha256": "a2e24837d6531c2e827876123d05ea482a21bcfc25358dbdacbf581fb1e51d81",
+          "bytes": 3248,
+          "observed_at": "2026-09-16T06:43:52.668782+00:00"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/petergyang/no-ai-slop/blob/000650b156983f5159695b441477f4e63b25dc85/LICENSE",
+          "blob_sha": "644ebee1944d0e7d03c66a25977ff0a8a8e1c7ae",
+          "sha256": "b7a7fe370cc4c9e974528c7cea7841cf8ac886bc9ed947edb11b289441fba4a8",
+          "bytes": 1067,
+          "observed_at": "2026-09-16T06:43:53.127916+00:00"
+        },
+        {
+          "path": "skills/no-ai-slop/SKILL.md",
+          "url": "https://github.com/petergyang/no-ai-slop/blob/000650b156983f5159695b441477f4e63b25dc85/skills/no-ai-slop/SKILL.md",
+          "blob_sha": "e2008aa08d688846b0373b83d7c3d33b85eaabdd",
+          "sha256": "992b365f51a2f62cf4c1c5ed22049a9ee551dfea677550c1a72b371c0ceadd62",
+          "bytes": 10853,
+          "observed_at": "2026-09-16T06:43:53.820148+00:00"
+        },
+        {
+          "path": "skills/no-ai-slop/eval.md",
+          "url": "https://github.com/petergyang/no-ai-slop/blob/000650b156983f5159695b441477f4e63b25dc85/skills/no-ai-slop/eval.md",
+          "blob_sha": "e912b3e9246ded24b14116682c23702a4d083dc7",
+          "sha256": "8ad8d83ed1abe7fc054ad74966bfca64fc182bc71f59d701b24b962c39d11ad7",
+          "bytes": 3214,
+          "observed_at": "2026-09-16T06:43:54.745845+00:00"
+        }
+      ]
+    },
+    {
+      "id": "AS02",
+      "requested_repository": "Leonxlnx/taste-skill",
+      "canonical_repository": "Leonxlnx/taste-skill",
+      "canonical_url": "https://github.com/Leonxlnx/taste-skill",
+      "decision": "ADAPT",
+      "retrieval": {
+        "method": "Repository metadata and commit-pinned first-party file review",
+        "observed_at": "2026-09-16T06:43:24.332107+00:00"
+      },
+      "head": {
+        "sha": "ccbc15639c97057cbfcf32ecebc38ef716e4bb37",
+        "url": "https://github.com/Leonxlnx/taste-skill/commit/ccbc15639c97057cbfcf32ecebc38ef716e4bb37",
+        "committed_at": "2026-08-24T15:23:56Z"
+      },
+      "license_observed": {
+        "spdx_id": "MIT",
+        "name": "MIT License",
+        "url": "https://api.github.com/licenses/mit",
+        "path": "LICENSE",
+        "notice": "MIT notice and conditions observed in LICENSE bytes; preserve them for reuse within the authorized scope.",
+        "scope": "LICENSE bytes reviewed; preserve the notice and conditions for reuse within the authorized scope."
+      },
+      "reviewed_scope": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/Leonxlnx/taste-skill/blob/ccbc15639c97057cbfcf32ecebc38ef716e4bb37/README.md",
+          "blob_sha": "5577b99d193716cb26467b0b0f1cfc506deb26a8",
+          "sha256": "6e3c818b8c561e16a743cc68143d14dfa9f5da69f834c389f278657d60ca37be",
+          "bytes": 16319,
+          "observed_at": "2026-09-16T06:43:52.705365+00:00"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/Leonxlnx/taste-skill/blob/ccbc15639c97057cbfcf32ecebc38ef716e4bb37/LICENSE",
+          "blob_sha": "48a2f6640b81ff8eca9ce7f6a96337692713ef5b",
+          "sha256": "4575a543ab88dad12ccea7d97e563d0bce5b448b06072e65d3264497dad326df",
+          "bytes": 1065,
+          "observed_at": "2026-09-16T06:43:53.321304+00:00"
+        },
+        {
+          "path": "skills/taste-skill/SKILL.md",
+          "url": "https://github.com/Leonxlnx/taste-skill/blob/ccbc15639c97057cbfcf32ecebc38ef716e4bb37/skills/taste-skill/SKILL.md",
+          "blob_sha": "b72132fcd466da605623ffe96e370b3991fc5285",
+          "sha256": "aa194351b246b8b4799099d4ed7b033d29eab6e6e3d58d8d2172978be7b3ec89",
+          "bytes": 87253,
+          "observed_at": "2026-09-16T06:43:54.503744+00:00"
+        },
+        {
+          "path": "skills/redesign-skill/SKILL.md",
+          "url": "https://github.com/Leonxlnx/taste-skill/blob/ccbc15639c97057cbfcf32ecebc38ef716e4bb37/skills/redesign-skill/SKILL.md",
+          "blob_sha": "c8304f0c9301385e3641b052d6b25b8af11cb6c1",
+          "sha256": "98ad3e5b051bfb71b2795f7e8a6aa0d32b51ee095606c098a4b2822ac07926c9",
+          "bytes": 15060,
+          "observed_at": "2026-09-16T06:43:54.941859+00:00"
+        }
+      ]
+    },
+    {
+      "id": "AS03",
+      "requested_repository": "Nutlope/hallmark",
+      "canonical_repository": "Nutlope/hallmark",
+      "canonical_url": "https://github.com/Nutlope/hallmark",
+      "decision": "ADAPT",
+      "retrieval": {
+        "method": "Repository metadata and commit-pinned first-party file review",
+        "observed_at": "2026-09-16T06:43:24.663922+00:00"
+      },
+      "head": {
+        "sha": "13ac0ec7e148655948100b6396439e481361d690",
+        "url": "https://github.com/Nutlope/hallmark/commit/13ac0ec7e148655948100b6396439e481361d690",
+        "committed_at": "2026-08-06T16:19:18Z"
+      },
+      "license_observed": {
+        "spdx_id": "MIT",
+        "name": "MIT License",
+        "url": "https://api.github.com/licenses/mit",
+        "path": "LICENSE",
+        "notice": "MIT notice and conditions observed in LICENSE bytes; preserve them for reuse within the authorized scope.",
+        "scope": "LICENSE bytes reviewed; preserve the notice and conditions for reuse within the authorized scope."
+      },
+      "reviewed_scope": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/Nutlope/hallmark/blob/13ac0ec7e148655948100b6396439e481361d690/README.md",
+          "blob_sha": "974d732e5502dd42b74d388ec54911b9aab2ba95",
+          "sha256": "878aa11aab1785f7a9d6c2eec889220b53cda4ddc22bf38cf575af98f99bfe72",
+          "bytes": 6321,
+          "observed_at": "2026-09-16T06:43:52.667495+00:00"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/Nutlope/hallmark/blob/13ac0ec7e148655948100b6396439e481361d690/LICENSE",
+          "blob_sha": "f4bfc53d8d773d3b10d95c2d58a5773dd4e2f3aa",
+          "sha256": "06088a8b94598626f27612dea42300154bf7be967c85d9d3eee4490cb056af7d",
+          "bytes": 1078,
+          "observed_at": "2026-09-16T06:43:53.099423+00:00"
+        },
+        {
+          "path": "skills/hallmark/SKILL.md",
+          "url": "https://github.com/Nutlope/hallmark/blob/13ac0ec7e148655948100b6396439e481361d690/skills/hallmark/SKILL.md",
+          "blob_sha": "645221da63743de870501760a48694acdf7aef10",
+          "sha256": "59469635bbbd21acddbc664d95e8d97147f454b2d8f4a0a89c7d2c5afbe67577",
+          "bytes": 67460,
+          "observed_at": "2026-09-16T06:43:53.971403+00:00"
+        }
+      ]
+    },
+    {
+      "id": "AS04",
+      "requested_repository": "miqdadbadjuber/anti-slop",
+      "canonical_repository": "miqdadbadjuber/anti-slop",
+      "canonical_url": "https://github.com/miqdadbadjuber/anti-slop",
+      "decision": "ADAPT",
+      "retrieval": {
+        "method": "Repository metadata and commit-pinned first-party file review",
+        "observed_at": "2026-09-16T06:43:24.199055+00:00"
+      },
+      "head": {
+        "sha": "743735248fbaefd76bb56619615687dfa8b3bc1e",
+        "url": "https://github.com/miqdadbadjuber/anti-slop/commit/743735248fbaefd76bb56619615687dfa8b3bc1e",
+        "committed_at": "2026-09-16T00:03:08Z"
+      },
+      "license_observed": {
+        "spdx_id": "MIT",
+        "name": "MIT License",
+        "url": "https://api.github.com/licenses/mit",
+        "path": "LICENSE",
+        "notice": "MIT notice and conditions observed in LICENSE bytes; preserve them for reuse within the authorized scope.",
+        "scope": "LICENSE bytes reviewed; preserve the notice and conditions for reuse within the authorized scope."
+      },
+      "reviewed_scope": [
+        {
+          "path": "README.md",
+          "url": "https://github.com/miqdadbadjuber/anti-slop/blob/743735248fbaefd76bb56619615687dfa8b3bc1e/README.md",
+          "blob_sha": "9e41e08235032b2047bdb5c8f60db5ba67084881",
+          "sha256": "7d0da0fdb65e0c1feb6fa7dd49140dd3d3e033e240d486c25d63ca17348bda7c",
+          "bytes": 13690,
+          "observed_at": "2026-09-16T06:43:52.681942+00:00"
+        },
+        {
+          "path": "LICENSE",
+          "url": "https://github.com/miqdadbadjuber/anti-slop/blob/743735248fbaefd76bb56619615687dfa8b3bc1e/LICENSE",
+          "blob_sha": "6e216fae2c2603cfb56be32a9da4307290fb3247",
+          "sha256": "f5f6bfc4e738a88c4a9b0c18659e46ed57ff85e6e0077f4983daf5b9f85dffac",
+          "bytes": 1072,
+          "observed_at": "2026-09-16T06:43:53.111480+00:00"
+        },
+        {
+          "path": "skills/antislop/SKILL.md",
+          "url": "https://github.com/miqdadbadjuber/anti-slop/blob/743735248fbaefd76bb56619615687dfa8b3bc1e/skills/antislop/SKILL.md",
+          "blob_sha": "d7dabbd9826937e9e03b39e5754eae370228f83b",
+          "sha256": "61649f1cf3803e9e2c01740d40a94967d4657207b204df398712a44c64e21819",
+          "bytes": 50184,
+          "observed_at": "2026-09-16T06:43:53.635249+00:00"
+        },
+        {
+          "path": "skills/antislop-ui/SKILL.md",
+          "url": "https://github.com/miqdadbadjuber/anti-slop/blob/743735248fbaefd76bb56619615687dfa8b3bc1e/skills/antislop-ui/SKILL.md",
+          "blob_sha": "b263e8a4df7456d23183a183710c7c71ad393ee0",
+          "sha256": "47d9892771253f544f7eb2e40af35fd5c31407dcd8c048183bbd1de5a00a4bbe",
+          "bytes": 26844,
+          "observed_at": "2026-09-16T06:43:54.314873+00:00"
+        },
+        {
+          "path": "skills/antislop-copywriting/SKILL.md",
+          "url": "https://github.com/miqdadbadjuber/anti-slop/blob/743735248fbaefd76bb56619615687dfa8b3bc1e/skills/antislop-copywriting/SKILL.md",
+          "blob_sha": "84d8ffceebffb911d0703bded921a17c699c460d",
+          "sha256": "4d65d258d03618cbbbdbd9bd990293d05810bd8d4dac00faa4f125f959599ce1",
+          "bytes": 25175,
+          "observed_at": "2026-09-16T06:43:55.081359+00:00"
+        },
+        {
+          "path": "skills/antislop-code/SKILL.md",
+          "url": "https://github.com/miqdadbadjuber/anti-slop/blob/743735248fbaefd76bb56619615687dfa8b3bc1e/skills/antislop-code/SKILL.md",
+          "blob_sha": "3d5efdbcc7b491f2c22578e1b8d1199f98d94b9a",
+          "sha256": "004933009d352710dcbea7817101d5c188474a442e3ece26a6e0c18d3223898f",
+          "bytes": 8944,
+          "observed_at": "2026-09-16T06:43:55.762925+00:00"
+        },
+        {
+          "path": "skills/antislop-layoutmobile/SKILL.md",
+          "url": "https://github.com/miqdadbadjuber/anti-slop/blob/743735248fbaefd76bb56619615687dfa8b3bc1e/skills/antislop-layoutmobile/SKILL.md",
+          "blob_sha": "6aeaaaf2ab24a14a0faab0a787e46a745fff5c95",
+          "sha256": "8613395a5109f637837f5c24f0ce5e58a96df1c2567a9f7666fcaecc47ff39cd",
+          "bytes": 16378,
+          "observed_at": "2026-09-16T06:43:56.202535+00:00"
+        }
+      ]
+    }
+  ]
+}

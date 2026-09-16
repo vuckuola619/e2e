@@ -54,6 +54,17 @@ An imported file does not become a trusted `NEW_RUN` merely because its name or
 metadata claims a run ID. Verify the bytes, provenance, identity, procedure,
 and scope before using it.
 
+## Artifact review evidence lanes
+
+When a user-facing copy or frontend artifact is in scope, keep copy, rendered
+visual, and runtime interaction observations separate. Source or parser
+validity cannot make a rendered visual check pass. Without a screenshot or
+equivalent render observation, the visual lane is `NOT_RUN`; without an
+authorized interaction run, the runtime lane is `NOT_RUN` or `UNKNOWN` with a
+reason. Use the conditional [artifact quality reference](../skills/e2e/references/artifact-quality.md)
+and [artifact review matrix](../skills/e2e/assets/artifact-review.md) for the
+prompts and evidence fields.
+
 ## Status vocabulary
 
 Task state and check state are separate. A documentation task may be complete

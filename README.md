@@ -29,7 +29,9 @@ can be mistaken for proof that a product is useful or safe to release.
 - preserve the identity of the source, artifact, environment, and procedure;
 - keep raw observations available while producing useful compact views;
 - distinguish a task being complete from its check actually passing;
-- select an explicit proof set for a decision; and
+- select an explicit proof set for a decision;
+- review user-facing copy, rendered visuals, and runtime interactions in
+  separate lanes when that artifact type is in scope; and
 - keep technical readiness separate from product-learning decisions and human
   authorization to release.
 
@@ -58,6 +60,7 @@ for excluded domains.
 | Checklists and report templates | **TEMPLATE** | Templates can be copied into an authorized run directory and filled by a human or host. |
 | Product-planning templates | **TEMPLATE** | Brief, discovery-plan, and product-plan assets record intent and handoffs; they do not perform research or approve a product. |
 | Synthetic evidence example | **TEMPLATE** | The example shows shape and status handling; all results are `NOT_RUN`. |
+| Conditional artifact review | **AVAILABLE_GUIDANCE / TEMPLATE** | Route copy, rendered visual, and runtime interaction review only when a user-facing artifact is in scope. |
 | Public research register | **REFERENCE** | Public sources are recorded for selective design lessons, not vendored as executable code. |
 | Documentary source comparison | **REFERENCE** | A revision-pinned public-source comparison records documented capabilities and review limits; it is not a runtime benchmark. |
 | Typed core model and evaluator | **PLANNED** | A future implementation will validate references, identity, freshness, proof sets, and decisions. |
@@ -288,10 +291,12 @@ e2e/
 │   ├── baselines.md
 │   ├── ecosystem.md
 │   ├── comparison.md
+│   ├── anti-slop.md
 │   └── benchmark-protocol.md
 ├── research/
 │   ├── upstreams.json
-│   └── comparison-2026-09-16.json
+│   ├── comparison-2026-09-16.json
+│   └── anti-slop-2026-09-16.json
 └── skills/
     └── e2e/
         ├── SKILL.md
@@ -299,7 +304,8 @@ e2e/
         │   ├── workflow.md
         │   ├── lifecycle.md
         │   ├── controls.md
-        │   └── evidence.md
+        │   ├── evidence.md
+        │   └── artifact-quality.md
         └── assets/
             ├── product-brief.md
             ├── discovery-plan.md
@@ -308,6 +314,7 @@ e2e/
             ├── task.md
             ├── findings.md
             ├── run-index.md
+            ├── artifact-review.md
             └── evidence-manifest.example.json
 ```
 
@@ -374,13 +381,17 @@ licenses do not automatically apply here or to another dependency. See
 | [`docs/roadmap.md`](docs/roadmap.md) | Actionable runtime milestones and acceptance checks. |
 | [`docs/baselines.md`](docs/baselines.md) | Normative and reference baselines selected for future assessments. |
 | [`docs/ecosystem.md`](docs/ecosystem.md) | Public upstream observations and reuse dispositions. |
+| [`docs/anti-slop.md`](docs/anti-slop.md) | Focused four-source gap analysis and selective artifact-review adoption. |
 | [`docs/comparison.md`](docs/comparison.md) | Revision-pinned documentary comparison; runtime results remain `NOT_RUN`. |
 | [`docs/benchmark-protocol.md`](docs/benchmark-protocol.md) | Criteria and protocol for a future controlled comparison. |
 | [`research/comparison-2026-09-16.json`](research/comparison-2026-09-16.json) | Public comparison snapshot metadata and review scope. |
+| [`research/anti-slop-2026-09-16.json`](research/anti-slop-2026-09-16.json) | Four-source anti-slop research snapshot with selected scope and hashes. |
 | [`skills/e2e/references/lifecycle.md`](skills/e2e/references/lifecycle.md) | Lifecycle phases, progressive depth, handoffs, truth rules, and iteration. |
+| [`skills/e2e/references/artifact-quality.md`](skills/e2e/references/artifact-quality.md) | Conditional copy, rendered visual, and runtime interaction review lens. |
 | [`skills/e2e/assets/product-brief.md`](skills/e2e/assets/product-brief.md) | Brief template for product intent, hypotheses, outcomes, and boundaries. |
 | [`skills/e2e/assets/discovery-plan.md`](skills/e2e/assets/discovery-plan.md) | Discovery template for proposed research, evidence, findings, and dispositions. |
 | [`skills/e2e/assets/product-plan.md`](skills/e2e/assets/product-plan.md) | Product plan template for prioritized scope, requirements, delivery, release, operations, and measurement. |
+| [`skills/e2e/assets/artifact-review.md`](skills/e2e/assets/artifact-review.md) | Review matrix template with separate artifact lanes and evidence states. |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | How to improve guidance, templates, and future runtime work. |
 | [`SECURITY.md`](SECURITY.md) | Safe handling and reporting of security issues. |
 
